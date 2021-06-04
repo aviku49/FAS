@@ -26,4 +26,9 @@ public class SupplierDetailsDTO {
 	public void setSupplierNumber(Long supplierNumber) {
 		this.supplierNumber = supplierNumber;
 	}
+	@Override
+	public String toString() {
+		return "SupplierDetailsDTO [supplierId=" + supplierId + ", supplierName=" + supplierName + ", supplierNumber="
+				+ supplierNumber + "]";
+	}
 }

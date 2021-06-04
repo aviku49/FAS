@@ -41,5 +41,10 @@ public class OfferDetailsDTO {
 	public void setProductQuantity(int productQuantity) {
 		this.productQuantity = productQuantity;
 	}
+	@Override
+	public String toString() {
+		return "OfferDetailsDTO [productId=" + productId + ", productName=" + productName + ", productPrice="
+				+ productPrice + ", productDiscount=" + productDiscount + ", productQuantity=" + productQuantity + "]";
+	}
 
 }

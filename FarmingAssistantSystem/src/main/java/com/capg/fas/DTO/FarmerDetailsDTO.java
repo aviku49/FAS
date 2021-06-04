@@ -60,5 +60,11 @@ public class FarmerDetailsDTO {
 	public void setSoldCrop(String soldCrop) {
 		this.soldCrop = soldCrop;
 	}
+	@Override
+	public String toString() {
+		return "FarmerDetailsDTO [farmerId=" + farmerId + ", farmerName=" + farmerName + ", farmerAge=" + farmerAge
+				+ ", farmerNumber=" + farmerNumber + ", farmerAddress=" + farmerAddress + ", typeOfCrop=" + typeOfCrop
+				+ ", farmerComplaint=" + farmerComplaint + ", soldCrop=" + soldCrop + "]";
+	}
 
 }

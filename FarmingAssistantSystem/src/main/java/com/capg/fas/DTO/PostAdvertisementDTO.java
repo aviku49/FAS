@@ -40,5 +40,10 @@ public class PostAdvertisementDTO {
 	public void setSupplierNumber(Long supplierNumber) {
 		this.supplierNumber = supplierNumber;
 	}
+	@Override
+	public String toString() {
+		return "PostAdvertisementDTO [postId=" + postId + ", supplierName=" + supplierName + ", typeOfCrop="
+				+ typeOfCrop + ", QuantityInKgs=" + QuantityInKgs + ", supplierNumber=" + supplierNumber + "]";
+	}
 
 }

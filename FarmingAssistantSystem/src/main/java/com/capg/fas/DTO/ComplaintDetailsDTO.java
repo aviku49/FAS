@@ -39,5 +39,11 @@ public class ComplaintDetailsDTO {
 	public void setComplaintFrom(String complaintFrom) {
 		this.complaintFrom = complaintFrom;
 	}
+	@Override
+	public String toString() {
+		return "ComplaintDetailsDTO [complaintId=" + complaintId + ", complaintType=" + complaintType
+				+ ", complaintMessage=" + complaintMessage + ", complaintOn=" + complaintOn + ", complaintFrom="
+				+ complaintFrom + "]";
+	}
 
 }

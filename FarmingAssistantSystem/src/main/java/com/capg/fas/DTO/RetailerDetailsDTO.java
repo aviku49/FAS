@@ -41,5 +41,10 @@ public class RetailerDetailsDTO {
 	public void setFarmingTips(String farmingTips) {
 		this.farmingTips = farmingTips;
 	}
+	@Override
+	public String toString() {
+		return "RetailerDetailsDTO [retailerId=" + retailerId + ", retailerName=" + retailerName + ", retailerNumber="
+				+ retailerNumber + ", farmingTips=" + farmingTips + ", retailerCategory=" + retailerCategory + "]";
+	}
 
 }
