@@ -11,7 +11,7 @@ public class OfferDetailsUtils {
 	public static List<OfferDetailsDTO> convertToOfferDetailsDTOList(List<OfferDetails> list){
 		List<OfferDetailsDTO> dtolist = new ArrayList<OfferDetailsDTO>();
 		for(OfferDetails OfferDetails : list) 
-			dtolist.add(convertToOfferDetailsDTO(OfferDetails));
+			dtolist.add(convertToOfferDetailsDto(OfferDetails));
 		return dtolist;
 	}
 	
@@ -28,13 +28,13 @@ public class OfferDetailsUtils {
 	
 	
 		
-		public static OfferDetailsDTO convertToOfferDetailsDTO(OfferDetails OfferDetails) {
+		public static OfferDetailsDTO convertToOfferDetailsDto(OfferDetails OfferDetails) {
 			OfferDetailsDTO OfferDetailsDTO = new OfferDetailsDTO();
 			OfferDetailsDTO.setProductQuantity(OfferDetails.getProductQuantity());
 			OfferDetailsDTO.setProductDiscount(OfferDetails.getProductDiscount());
 			OfferDetailsDTO.setProductPrice(OfferDetails.getProductPrice());
-			OfferDetails.setProductName(OfferDetailsDTO.getProductName());
-			OfferDetails.setProductId(OfferDetailsDTO.getProductId());
+			OfferDetailsDTO.setProductName(OfferDetails.getProductName());
+			OfferDetailsDTO.setProductId(OfferDetails.getProductId());
 			return OfferDetailsDTO;
 		}
 

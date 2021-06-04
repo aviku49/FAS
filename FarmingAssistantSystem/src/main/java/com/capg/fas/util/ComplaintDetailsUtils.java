@@ -10,7 +10,7 @@ public class ComplaintDetailsUtils {
 	public static List<ComplaintDetailsDTO> convertToComplaintDetailsDTOList(List<ComplaintDetails> list){
 		List<ComplaintDetailsDTO> dtolist = new ArrayList<ComplaintDetailsDTO>();
 		for(ComplaintDetails ComplaintDetails : list) 
-			dtolist.add(convertToComplaintDetailsDTO(ComplaintDetails));
+			dtolist.add(convertToComplaintDetailsDto(ComplaintDetails));
 		return dtolist;
 	}
 	
@@ -27,7 +27,7 @@ public class ComplaintDetailsUtils {
 	
 	
 		
-		public static ComplaintDetailsDTO convertToComplaintDetailsDTO(ComplaintDetails ComplaintDetails) {
+		public static ComplaintDetailsDTO convertToComplaintDetailsDto(ComplaintDetails ComplaintDetails) {
 			ComplaintDetailsDTO ComplaintDetailsDTO = new ComplaintDetailsDTO();
 			ComplaintDetailsDTO.setComplaintFrom(ComplaintDetails.getComplaintFrom());
 			ComplaintDetailsDTO.setComplaintOn(ComplaintDetails.getComplaintOn());
