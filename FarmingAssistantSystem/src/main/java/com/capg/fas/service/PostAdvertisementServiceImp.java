@@ -1,5 +1,7 @@
 package com.capg.fas.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,4 +24,13 @@ public class PostAdvertisementServiceImp implements IPostAdvertisementService {
 		return posdto;
 
 }
+
+	@Override
+	public PostAdvertisementDTO getPost(int id) {
+		
+		PostAdvertisement list= repo.findById(id).orElse(new PostAdvertisement());
+		PostAdvertisementDTO posdto=PostAdvertisementUtils.convertToPostAdvertisementDto(list);
+		return posdto;
+
+	}
 }

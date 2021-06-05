@@ -8,10 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Retailer_Details")
+@Table(name="Retailer2")
 public class RetailerDetails {
 	
 	@Id
@@ -21,11 +22,22 @@ public class RetailerDetails {
 	private String farmingTips;
 	private String retailerCategory;
 	
+	
 	@OneToMany(mappedBy="retailer", cascade=CascadeType.ALL)
-	@JoinColumn(name="fk")
-	private List<OfferDetails> offerDetails=new ArrayList<>();
+	private List<OfferDetails> offerDetails;
 	
 	
+//	@OneToMany(cascade=CascadeType.ALL)
+//	@JoinColumn(name="fkey")
+//	private List<OfferDetails> offerDetails=new ArrayList<>();
+	
+	
+	public List<OfferDetails> getOfferDetails() {
+		return offerDetails;
+	}
+	public void setOfferDetails(List<OfferDetails> offerDetails) {
+		this.offerDetails = offerDetails;
+	}
 	public List<OfferDetails> getofferDetails() {
 		return offerDetails;
 	}

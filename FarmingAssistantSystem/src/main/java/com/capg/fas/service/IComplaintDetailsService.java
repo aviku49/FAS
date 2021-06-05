@@ -7,5 +7,7 @@ public interface IComplaintDetailsService {
 	
 	
 	public ComplaintDetailsDTO addComplaint(ComplaintDetails details);
+	
+	public ComplaintDetailsDTO showComplain(int id);
 
 }

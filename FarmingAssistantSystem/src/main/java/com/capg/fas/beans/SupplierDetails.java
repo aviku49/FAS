@@ -1,7 +1,11 @@
 package com.capg.fas.beans;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,10 +16,9 @@ public class SupplierDetails {
 	private int supplierId;
 	private String supplierName;
 	private Long supplierNumber;
-	//@OneToMany
-	//private List<PostAdvertisement> advertise = new ArrayList<>();
-	//@OneToMany
-	//private List<ComplaintDetails> complain= new ArrayList<>();
+	@OneToMany(mappedBy="supplier", cascade=CascadeType.ALL)
+	private List<PostAdvertisement> advertise;
+	
 	public int getSupplierId() {
 		return supplierId;
 	}
@@ -33,6 +36,12 @@ public class SupplierDetails {
 	}
 	public void setSupplierNumber(Long supplierNumber) {
 		this.supplierNumber = supplierNumber;
+	}
+	public List<PostAdvertisement> getAdvertise() {
+		return advertise;
+	}
+	public void setAdvertise(List<PostAdvertisement> advertise) {
+		this.advertise = advertise;
 	}
 	
 	

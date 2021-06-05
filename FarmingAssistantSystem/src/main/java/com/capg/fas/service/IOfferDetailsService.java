@@ -9,4 +9,5 @@ public interface IOfferDetailsService {
 	
 	public OfferDetailsDTO addOffer(OfferDetails offer);
 
+	public OfferDetailsDTO showOffer(int id);
 }

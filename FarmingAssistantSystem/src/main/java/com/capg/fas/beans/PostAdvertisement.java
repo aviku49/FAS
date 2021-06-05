@@ -1,7 +1,10 @@
 package com.capg.fas.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,12 +15,19 @@ public class PostAdvertisement {
 	private int postId;
 	private String supplierName;
 	private String typeOfCrop;
+	public SupplierDetails getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(SupplierDetails supplier) {
+		this.supplier = supplier;
+	}
 	private int QuantityInKgs;
 	private Long supplierNumber;
-	//@ManyToOne
-	//private SupplierDetails supplier;
-	//@ManyToOne
-	//private FarmerDetails farmer;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="supplier_id")
+	private SupplierDetails supplier;
+	
 	public int getPostId() {
 		return postId;
 	}

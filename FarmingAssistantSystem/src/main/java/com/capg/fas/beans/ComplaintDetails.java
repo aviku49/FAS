@@ -1,7 +1,10 @@
 package com.capg.fas.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,13 +17,19 @@ public class ComplaintDetails {
 	private String complaintMessage;
 	private String complaintOn;
 	private String complaintFrom;
-	//@ManyToOne
-	//private FarmerDetails farmer;
-	//@ManyToOne
-	//private SupplierDetails supplier;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="farmer_id")
+	private FarmerDetails farmer;
 	
 	public int getComplaintId() {
 		return complaintId;
+	}
+	public FarmerDetails getFarmer() {
+		return farmer;
+	}
+	public void setFarmer(FarmerDetails farmer) {
+		this.farmer = farmer;
 	}
 	public void setComplaintId(int complaintId) {
 		this.complaintId = complaintId;
