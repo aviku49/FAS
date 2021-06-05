@@ -11,7 +11,7 @@ public class SupplierDetailsUtils {
 	public static List<SupplierDetailsDTO> convertToSupplierDetailsDTOList(List<SupplierDetails> list){
 		List<SupplierDetailsDTO> dtolist = new ArrayList<SupplierDetailsDTO>();
 		for(SupplierDetails SupplierDetails : list) 
-			dtolist.add(convertToSupplierDetailsDTO(SupplierDetails));
+			dtolist.add(convertToSupplierDetailsDto(SupplierDetails));
 		return dtolist;
 	}
 	
@@ -25,7 +25,7 @@ public class SupplierDetailsUtils {
 	
 	
 		
-		public static SupplierDetailsDTO convertToSupplierDetailsDTO(SupplierDetails SupplierDetails) {
+		public static SupplierDetailsDTO convertToSupplierDetailsDto(SupplierDetails SupplierDetails) {
 			SupplierDetailsDTO SupplierDetailsDTO = new SupplierDetailsDTO();
 			SupplierDetailsDTO.setSupplierNumber(SupplierDetails.getSupplierNumber());
 			SupplierDetailsDTO.setSupplierName(SupplierDetails.getSupplierName());

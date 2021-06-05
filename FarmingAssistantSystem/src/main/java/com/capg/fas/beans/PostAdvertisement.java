@@ -14,6 +14,10 @@ public class PostAdvertisement {
 	private String typeOfCrop;
 	private int QuantityInKgs;
 	private Long supplierNumber;
+	//@ManyToOne
+	//private SupplierDetails supplier;
+	//@ManyToOne
+	//private FarmerDetails farmer;
 	public int getPostId() {
 		return postId;
 	}

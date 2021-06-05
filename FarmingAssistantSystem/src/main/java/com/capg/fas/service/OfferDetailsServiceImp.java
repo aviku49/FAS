@@ -19,9 +19,9 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 	@Override
 	public OfferDetailsDTO addOffer(OfferDetails offer) {
 		
-		OfferDetails com= repo.save(offer);
-		OfferDetailsDTO comdto=OfferDetailsUtils.convertToOfferDetailsDto(com);
-		return comdto;
+		OfferDetails ofs= repo.save(offer);
+		OfferDetailsDTO ofsdto=OfferDetailsUtils.convertToOfferDetailsDto(ofs);
+		return ofsdto;
 	}
 
 }

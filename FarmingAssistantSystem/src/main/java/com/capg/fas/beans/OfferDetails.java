@@ -1,7 +1,10 @@
 package com.capg.fas.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +17,20 @@ public class OfferDetails {
 	private int productPrice;
 	private int productDiscount;
 	private int productQuantity;
+	//@ManyToMany
+	//private List<RetailerDetails> retailer;
+	//@ManyToOne
+	//private FarmerDetails farmer;
+	
+//	@ManyToOne(cascade=CascadeType.ALL)
+//	private RetailerDetails retailer;
+	
+//	public RetailerDetails getRetailer() {
+//		return retailer;
+//	}
+//	public void setRetailer(RetailerDetails retailer) {
+//		this.retailer = retailer;
+//	}
 	public int getProductId() {
 		return productId;
 	}

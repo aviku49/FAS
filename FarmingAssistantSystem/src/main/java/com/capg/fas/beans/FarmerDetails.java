@@ -17,6 +17,12 @@ public class FarmerDetails {
 	private String typeOfCrop;
 	private String farmerComplaint;
 	private String soldCrop;
+	//@OnetoMany
+	//private List<ComplaintDetails> complain=new ArrayList<>();
+	//@OneToMany
+	//private List<Offer> offers=new ArrayList<>();
+	//@OneToMany
+	//private List<PostAdvertisement> advertise =new ArrayList<>();
 	public int getFarmerId() {
 		return farmerId;
 	}

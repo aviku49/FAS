@@ -14,6 +14,11 @@ public class ComplaintDetails {
 	private String complaintMessage;
 	private String complaintOn;
 	private String complaintFrom;
+	//@ManyToOne
+	//private FarmerDetails farmer;
+	//@ManyToOne
+	//private SupplierDetails supplier;
+	
 	public int getComplaintId() {
 		return complaintId;
 	}

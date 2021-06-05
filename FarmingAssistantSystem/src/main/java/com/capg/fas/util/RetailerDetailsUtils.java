@@ -11,7 +11,7 @@ public class RetailerDetailsUtils {
 	public static List<RetailerDetailsDTO> convertToRetailerDetailsDTOList(List<RetailerDetails> list){
 		List<RetailerDetailsDTO> dtolist = new ArrayList<RetailerDetailsDTO>();
 		for(RetailerDetails RetailerDetails : list) 
-			dtolist.add(convertToRetailerDetailsDTO(RetailerDetails));
+			dtolist.add(convertToRetailerDetailsDto(RetailerDetails));
 		return dtolist;
 	}
 	
@@ -27,7 +27,7 @@ public class RetailerDetailsUtils {
 	
 	
 		
-		public static RetailerDetailsDTO convertToRetailerDetailsDTO(RetailerDetails RetailerDetails) {
+		public static RetailerDetailsDTO convertToRetailerDetailsDto(RetailerDetails RetailerDetails) {
 			RetailerDetailsDTO RetailerDetailsDTO = new RetailerDetailsDTO();
 			RetailerDetailsDTO.setRetailerCategory(RetailerDetails.getRetailerCategory());
 			RetailerDetailsDTO.setRetailerNumber(RetailerDetails.getRetailerNumber());

@@ -1,7 +1,13 @@
 package com.capg.fas.beans;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +21,17 @@ public class RetailerDetails {
 	private String farmingTips;
 	private String retailerCategory;
 	
+	@OneToMany(mappedBy="retailer", cascade=CascadeType.ALL)
+	@JoinColumn(name="fk")
+	private List<OfferDetails> offerDetails=new ArrayList<>();
+	
+	
+	public List<OfferDetails> getofferDetails() {
+		return offerDetails;
+	}
+	public void setofferDetials(List<OfferDetails> offerDetails) {
+		this.offerDetails = offerDetails;
+	}
 	public int getRetailerId() {
 		return retailerId;
 	}

@@ -10,7 +10,7 @@ public class PostAdvertisementUtils {
 	public static List<PostAdvertisementDTO> convertToPostAdvertisementDTOList(List<PostAdvertisement> list){
 		List<PostAdvertisementDTO> dtolist = new ArrayList<PostAdvertisementDTO>();
 		for(PostAdvertisement PostAdvertisement : list) 
-			dtolist.add(convertToPostAdvertisementDTO(PostAdvertisement));
+			dtolist.add(convertToPostAdvertisementDto(PostAdvertisement));
 		return dtolist;
 	}
 	
@@ -27,7 +27,7 @@ public class PostAdvertisementUtils {
 	
 	
 		
-		public static PostAdvertisementDTO convertToPostAdvertisementDTO(PostAdvertisement PostAdvertisement) {
+		public static PostAdvertisementDTO convertToPostAdvertisementDto(PostAdvertisement PostAdvertisement) {
 			PostAdvertisementDTO PostAdvertisementDTO = new PostAdvertisementDTO();
 			PostAdvertisementDTO.setSupplierNumber(PostAdvertisement.getSupplierNumber());
 			PostAdvertisementDTO.setQuantityInKgs(PostAdvertisement.getQuantityInKgs());

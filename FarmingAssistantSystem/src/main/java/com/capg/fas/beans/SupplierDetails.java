@@ -12,6 +12,10 @@ public class SupplierDetails {
 	private int supplierId;
 	private String supplierName;
 	private Long supplierNumber;
+	//@OneToMany
+	//private List<PostAdvertisement> advertise = new ArrayList<>();
+	//@OneToMany
+	//private List<ComplaintDetails> complain= new ArrayList<>();
 	public int getSupplierId() {
 		return supplierId;
 	}
