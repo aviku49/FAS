@@ -1,5 +1,7 @@
 package com.capg.fas.service;
 
+import java.util.regex.Pattern;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,4 +37,19 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 		return posdto;
 	}
 
+	public static boolean validOfferDetails(OfferDetails offerdetails)
+	{
+		boolean flag=false;
+		String id=String.valueOf(offerdetails.getProductId());
+		if((Pattern.matches("[123456789]{1}[0-9]{8}", id))&&
+				Pattern.matches("^[A-Za-z]\\w{5,29}$",offerdetails.getProductName())&&
+				offerdetails.getProductPrice()>=0&&
+				Pattern.matches("^[0-9]\\w{100}$",offerdetails.getProductDiscount())&&
+				Pattern.matches("^[0-9]\\w{1000}$",offerdetails.getProductQuantity()))
+		{
+			flag=true;
+		}
+		return flag;
+		
+	}
 }

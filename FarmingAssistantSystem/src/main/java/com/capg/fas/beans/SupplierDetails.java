@@ -13,9 +13,10 @@ import javax.persistence.Table;
 public class SupplierDetails {
 
 	@Id
-	private int supplierId;
-	private String supplierName;
-	private Long supplierNumber;
+	private int supplierId; //id>0 {1,8}
+	private String supplierName; //name validation
+	private Long supplierNumber; // number validation
+	
 	@OneToMany(mappedBy="supplier", cascade=CascadeType.ALL)
 	private List<PostAdvertisement> advertise;
 	

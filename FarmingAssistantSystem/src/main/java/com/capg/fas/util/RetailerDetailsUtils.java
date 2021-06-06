@@ -19,6 +19,7 @@ public class RetailerDetailsUtils {
 		RetailerDetails RetailerDetails = new RetailerDetails();
 		RetailerDetails.setRetailerCategory(RetailerDetailsDTO.getRetailerCategory());
 		RetailerDetails.setRetailerNumber(RetailerDetailsDTO.getRetailerNumber());
+		RetailerDetails.setOfferDetails(RetailerDetailsDTO.getOfferDetails());
 		RetailerDetails.setRetailerName(RetailerDetailsDTO.getRetailerName());
 		RetailerDetails.setRetailerId(RetailerDetailsDTO.getRetailerId());
 		
@@ -31,6 +32,7 @@ public class RetailerDetailsUtils {
 			RetailerDetailsDTO RetailerDetailsDTO = new RetailerDetailsDTO();
 			RetailerDetailsDTO.setRetailerCategory(RetailerDetails.getRetailerCategory());
 			RetailerDetailsDTO.setRetailerNumber(RetailerDetails.getRetailerNumber());
+			RetailerDetailsDTO.setOfferDetails(RetailerDetails.getOfferDetails());
 			RetailerDetailsDTO.setRetailerName(RetailerDetails.getRetailerName());
 			RetailerDetailsDTO.setRetailerId(RetailerDetails.getRetailerId());
 			return RetailerDetailsDTO;

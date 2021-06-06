@@ -17,8 +17,8 @@ public class FarmerDetailsUtils {
 	
 	public static FarmerDetails convertToFarmerDetails(FarmerDetailsDTO FarmerDetailsDTO) {
 		FarmerDetails FarmerDetails = new FarmerDetails();
-		FarmerDetails.setSoldCrop(FarmerDetailsDTO.getSoldCrop());
-		FarmerDetails.setFarmerComplaint(FarmerDetailsDTO.getFarmerComplaint());
+		
+		FarmerDetails.setComplain(FarmerDetailsDTO.getComplain());
 		FarmerDetails.setTypeOfCrop(FarmerDetailsDTO.getTypeOfCrop());
 		FarmerDetails.setFarmerAddress(FarmerDetailsDTO.getFarmerAddress());
 		FarmerDetails.setFarmerNumber(FarmerDetailsDTO.getFarmerNumber());
@@ -33,8 +33,8 @@ public class FarmerDetailsUtils {
 		
 		public static FarmerDetailsDTO convertToFarmerDetailsDto(FarmerDetails FarmerDetails) {
 			FarmerDetailsDTO FarmerDetailsDTO = new FarmerDetailsDTO();
-			FarmerDetailsDTO.setSoldCrop(FarmerDetails.getSoldCrop());
-			FarmerDetailsDTO.setFarmerComplaint(FarmerDetails.getFarmerComplaint());
+		
+			FarmerDetailsDTO.setComplain(FarmerDetails.getComplain());
 			FarmerDetailsDTO.setTypeOfCrop(FarmerDetails.getTypeOfCrop());
 			FarmerDetailsDTO.setFarmerAddress(FarmerDetails.getFarmerAddress());
 			FarmerDetailsDTO.setFarmerNumber(FarmerDetails.getFarmerNumber());

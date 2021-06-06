@@ -1,6 +1,7 @@
 package com.capg.fas.service;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,19 @@ public class PostAdvertisementServiceImp implements IPostAdvertisementService {
 		PostAdvertisementDTO posdto=PostAdvertisementUtils.convertToPostAdvertisementDto(list);
 		return posdto;
 
+	}
+	public static boolean validPost(PostAdvertisement ad)
+	{
+		boolean flag=false;
+		String id=String.valueOf(ad.getPostId());
+		if((Pattern.matches("[123456789]{1}[0-9]{8}", id))&&
+				(ad.getTypeOfCrop().length()<30)&&
+				Pattern.matches("^[0-9]\\w{1000}$",ad.getQuantity()))
+		{
+			flag=true;
+		}
+		return flag;
+		
+		
 	}
 }

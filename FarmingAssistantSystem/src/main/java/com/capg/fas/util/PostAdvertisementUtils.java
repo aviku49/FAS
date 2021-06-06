@@ -16,10 +16,10 @@ public class PostAdvertisementUtils {
 	
 	public static PostAdvertisement convertToPostAdvertisement(PostAdvertisementDTO PostAdvertisementDTO) {
 		PostAdvertisement PostAdvertisement = new PostAdvertisement();
-		PostAdvertisement.setSupplierNumber(PostAdvertisementDTO.getSupplierNumber());
-		PostAdvertisement.setQuantityInKgs(PostAdvertisementDTO.getQuantityInKgs());
+		
+		PostAdvertisement.setQuantity(PostAdvertisementDTO.getQuantity());
 		PostAdvertisement.setTypeOfCrop(PostAdvertisementDTO.getTypeOfCrop());
-		PostAdvertisement.setSupplierName(PostAdvertisementDTO.getSupplierName());
+		PostAdvertisement.setSupplier(PostAdvertisementDTO.getSupplier());
 		PostAdvertisement.setPostId(PostAdvertisementDTO.getPostId());
 		
 		return PostAdvertisement;
@@ -29,10 +29,9 @@ public class PostAdvertisementUtils {
 		
 		public static PostAdvertisementDTO convertToPostAdvertisementDto(PostAdvertisement PostAdvertisement) {
 			PostAdvertisementDTO PostAdvertisementDTO = new PostAdvertisementDTO();
-			PostAdvertisementDTO.setSupplierNumber(PostAdvertisement.getSupplierNumber());
-			PostAdvertisementDTO.setQuantityInKgs(PostAdvertisement.getQuantityInKgs());
+			PostAdvertisementDTO.setQuantity(PostAdvertisement.getQuantity());
 			PostAdvertisementDTO.setTypeOfCrop(PostAdvertisement.getTypeOfCrop());
-			PostAdvertisementDTO.setSupplierName(PostAdvertisement.getSupplierName());
+			PostAdvertisementDTO.setSupplier(PostAdvertisement.getSupplier());
 			PostAdvertisementDTO.setPostId(PostAdvertisement.getPostId());
 			return PostAdvertisementDTO;
 		}

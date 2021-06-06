@@ -1,17 +1,33 @@
 package com.capg.fas.DTO;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
 import org.springframework.stereotype.Component;
+
+import com.capg.fas.beans.ComplaintDetails;
 
 @Component
 public class FarmerDetailsDTO {
-	private int farmerId;
-	private String farmerName;
-	private int farmerAge;
-	private Long farmerNumber;
-	private String farmerAddress;
-	private String typeOfCrop;
-	private String farmerComplaint;
-	private String soldCrop;
+	private int farmerId; //{1,8} ,id>0
+	private String farmerName; //name validation	
+	private int farmerAge; //>18&&<100;
+	private Long farmerNumber;  //number validation	
+	private String farmerAddress; //length<100
+	private String typeOfCrop; // length<30
+	
+	
+	@OneToMany(mappedBy="farmer", cascade=CascadeType.ALL)
+	private List<ComplaintDetails> complain;
+	
+	public List<ComplaintDetails> getComplain() {
+		return complain;
+	}
+	public void setComplain(List<ComplaintDetails> complain) {
+		this.complain = complain;
+	}
 	public int getFarmerId() {
 		return farmerId;
 	}
@@ -48,23 +64,15 @@ public class FarmerDetailsDTO {
 	public void setTypeOfCrop(String typeOfCrop) {
 		this.typeOfCrop = typeOfCrop;
 	}
-	public String getFarmerComplaint() {
-		return farmerComplaint;
-	}
-	public void setFarmerComplaint(String farmerComplaint) {
-		this.farmerComplaint = farmerComplaint;
-	}
-	public String getSoldCrop() {
-		return soldCrop;
-	}
-	public void setSoldCrop(String soldCrop) {
-		this.soldCrop = soldCrop;
-	}
 	@Override
 	public String toString() {
 		return "FarmerDetailsDTO [farmerId=" + farmerId + ", farmerName=" + farmerName + ", farmerAge=" + farmerAge
 				+ ", farmerNumber=" + farmerNumber + ", farmerAddress=" + farmerAddress + ", typeOfCrop=" + typeOfCrop
-				+ ", farmerComplaint=" + farmerComplaint + ", soldCrop=" + soldCrop + "]";
+				+ ", complain=" + complain + "]";
 	}
+	
+	
+	
+	
 
 }

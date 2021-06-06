@@ -13,14 +13,13 @@ import javax.persistence.Table;
 public class FarmerDetails {
 
 	@Id
-	private int farmerId;
-	private String farmerName;
-	private int farmerAge;
-	private Long farmerNumber;
-	private String farmerAddress;
-	private String typeOfCrop;
-	private String farmerComplaint;
-	private String soldCrop;
+	private int farmerId; //{1,8} ,id>0
+	private String farmerName; //name validation	
+	private int farmerAge; //>18&&<100;
+	private Long farmerNumber;  //number validation	
+	private String farmerAddress; //length<100
+	private String typeOfCrop; // length<30
+	
 	
 	@OneToMany(mappedBy="farmer", cascade=CascadeType.ALL)
 	private List<ComplaintDetails> complain;
@@ -67,18 +66,7 @@ public class FarmerDetails {
 	public void setTypeOfCrop(String typeOfCrop) {
 		this.typeOfCrop = typeOfCrop;
 	}
-	public String getFarmerComplaint() {
-		return farmerComplaint;
-	}
-	public void setFarmerComplaint(String farmerComplaint) {
-		this.farmerComplaint = farmerComplaint;
-	}
-	public String getSoldCrop() {
-		return soldCrop;
-	}
-	public void setSoldCrop(String soldCrop) {
-		this.soldCrop = soldCrop;
-	}
+	
 	
 	
 	

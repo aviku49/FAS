@@ -16,7 +16,7 @@ public class ComplaintDetailsUtils {
 	
 	public static ComplaintDetails convertToComplaintDetails(ComplaintDetailsDTO ComplaintDetailsDTO) {
 		ComplaintDetails ComplaintDetails = new ComplaintDetails();
-		ComplaintDetails.setComplaintFrom(ComplaintDetailsDTO.getComplaintFrom());
+		ComplaintDetails.setFarmer(ComplaintDetailsDTO.getFarmer());
 		ComplaintDetails.setComplaintOn(ComplaintDetailsDTO.getComplaintOn());
 		ComplaintDetails.setComplaintMessage(ComplaintDetailsDTO.getComplaintMessage());
 		ComplaintDetails.setComplaintType(ComplaintDetailsDTO.getComplaintType());
@@ -29,7 +29,7 @@ public class ComplaintDetailsUtils {
 		
 		public static ComplaintDetailsDTO convertToComplaintDetailsDto(ComplaintDetails ComplaintDetails) {
 			ComplaintDetailsDTO ComplaintDetailsDTO = new ComplaintDetailsDTO();
-			ComplaintDetailsDTO.setComplaintFrom(ComplaintDetails.getComplaintFrom());
+			ComplaintDetailsDTO.setFarmer(ComplaintDetails.getFarmer());
 			ComplaintDetailsDTO.setComplaintOn(ComplaintDetails.getComplaintOn());
 			ComplaintDetailsDTO.setComplaintMessage(ComplaintDetails.getComplaintMessage());
 			ComplaintDetailsDTO.setComplaintType(ComplaintDetails.getComplaintType());

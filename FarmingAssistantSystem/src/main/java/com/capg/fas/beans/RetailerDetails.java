@@ -12,15 +12,15 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Retailer2")
+@Table(name="Retailer_info")
 public class RetailerDetails {
 	
 	@Id
-	private int retailerId;
-	private String retailerName;
-	private Long retailerNumber;
-	private String farmingTips;
-	private String retailerCategory;
+	private int retailerId; //id>0 {1,8}
+	private String retailerName; //name validation	
+	private Long retailerNumber; // number validation
+	private String farmingTips; // length<1000
+	private String retailerCategory; // length<25
 	
 	
 	@OneToMany(mappedBy="retailer", cascade=CascadeType.ALL)

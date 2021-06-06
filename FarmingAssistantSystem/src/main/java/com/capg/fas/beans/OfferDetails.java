@@ -9,15 +9,16 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Offer2")
+@Table(name="Offer_info")
 public class OfferDetails {
 	
 	@Id
-	private int productId;
-	private String productName;
-	private int productPrice;
-	private int productDiscount;
-	private int productQuantity;
+	private int productId; //{1,8} id>0
+	private String productName; //name validation
+	private int productPrice; // p>=0 && 
+	private String productDiscount; // regex
+	private String productQuantity; // regex
+	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="retailer_id")
 	   private RetailerDetails retailer;
@@ -46,16 +47,16 @@ public class OfferDetails {
 	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
 	}
-	public int getProductDiscount() {
+	public String getProductDiscount() {
 		return productDiscount;
 	}
-	public void setProductDiscount(int productDiscount) {
+	public void setProductDiscount(String productDiscount) {
 		this.productDiscount = productDiscount;
 	}
-	public int getProductQuantity() {
+	public String getProductQuantity() {
 		return productQuantity;
 	}
-	public void setProductQuantity(int productQuantity) {
+	public void setProductQuantity(String productQuantity) {
 		this.productQuantity = productQuantity;
 	}
 	

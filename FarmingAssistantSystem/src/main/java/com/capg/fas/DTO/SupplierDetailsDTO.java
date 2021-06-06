@@ -1,13 +1,24 @@
 package com.capg.fas.DTO;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
 import org.springframework.stereotype.Component;
+
+import com.capg.fas.beans.PostAdvertisement;
 
 @Component
 public class SupplierDetailsDTO {
 
-	private int supplierId;
-	private String supplierName;
-	private Long supplierNumber;
+	private int supplierId; //id>0 {1,8}
+	private String supplierName; //name validation
+	private Long supplierNumber; // number validation
+	
+	@OneToMany(mappedBy="supplier", cascade=CascadeType.ALL)
+	private List<PostAdvertisement> advertise;
+	
 	public int getSupplierId() {
 		return supplierId;
 	}
@@ -26,9 +37,12 @@ public class SupplierDetailsDTO {
 	public void setSupplierNumber(Long supplierNumber) {
 		this.supplierNumber = supplierNumber;
 	}
-	@Override
-	public String toString() {
-		return "SupplierDetailsDTO [supplierId=" + supplierId + ", supplierName=" + supplierName + ", supplierNumber="
-				+ supplierNumber + "]";
+	public List<PostAdvertisement> getAdvertise() {
+		return advertise;
 	}
+	public void setAdvertise(List<PostAdvertisement> advertise) {
+		this.advertise = advertise;
+	}
+	
+	
 }

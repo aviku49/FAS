@@ -12,15 +12,14 @@ import javax.persistence.Table;
 public class ComplaintDetails {
 	
 	@Id
-	private int complaintId;
-	private String complaintType;
-	private String complaintMessage;
-	private String complaintOn;
-	private String complaintFrom;
+	private int complaintId;   //{1,8}, id>0
+	private String complaintType;   //length<30
+	private String complaintMessage; //length<500
+	private String complaintOn; //name validation
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="farmer_id")
-	private FarmerDetails farmer;
+	private FarmerDetails farmer;  //null
 	
 	public int getComplaintId() {
 		return complaintId;
@@ -52,11 +51,6 @@ public class ComplaintDetails {
 	public void setComplaintOn(String complaintOn) {
 		this.complaintOn = complaintOn;
 	}
-	public String getComplaintFrom() {
-		return complaintFrom;
-	}
-	public void setComplaintFrom(String complaintFrom) {
-		this.complaintFrom = complaintFrom;
-	}
+	
 
 }

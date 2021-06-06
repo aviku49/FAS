@@ -1,16 +1,45 @@
 package com.capg.fas.DTO;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
 import org.springframework.stereotype.Component;
+
+import com.capg.fas.beans.OfferDetails;
 
 @Component
 public class RetailerDetailsDTO {
 	
-	private int retailerId;
-	private String retailerName;
-	private Long retailerNumber;
-	private String farmingTips;
-	private String retailerCategory;
+	private int retailerId; //id>0 {1,8}
+	private String retailerName; //name validation	
+	private Long retailerNumber; // number validation
+	private String farmingTips; // length<1000
+	private String retailerCategory; // length<25
 	
+	
+	@OneToMany(mappedBy="retailer", cascade=CascadeType.ALL)
+	private List<OfferDetails> offerDetails;
+	
+	
+//	@OneToMany(cascade=CascadeType.ALL)
+//	@JoinColumn(name="fkey")
+//	private List<OfferDetails> offerDetails=new ArrayList<>();
+	
+	
+	public List<OfferDetails> getOfferDetails() {
+		return offerDetails;
+	}
+	public void setOfferDetails(List<OfferDetails> offerDetails) {
+		this.offerDetails = offerDetails;
+	}
+	public List<OfferDetails> getofferDetails() {
+		return offerDetails;
+	}
+	public void setofferDetials(List<OfferDetails> offerDetails) {
+		this.offerDetails = offerDetails;
+	}
 	public int getRetailerId() {
 		return retailerId;
 	}
@@ -44,7 +73,7 @@ public class RetailerDetailsDTO {
 	@Override
 	public String toString() {
 		return "RetailerDetailsDTO [retailerId=" + retailerId + ", retailerName=" + retailerName + ", retailerNumber="
-				+ retailerNumber + ", farmingTips=" + farmingTips + ", retailerCategory=" + retailerCategory + "]";
+				+ retailerNumber + ", farmingTips=" + farmingTips + ", retailerCategory=" + retailerCategory
+				+ ", offerDetails=" + offerDetails + "]";
 	}
-
 }

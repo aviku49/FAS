@@ -19,6 +19,7 @@ public class OfferDetailsUtils {
 		OfferDetails OfferDetails = new OfferDetails();
 		OfferDetails.setProductQuantity(OfferDetailsDTO.getProductQuantity());
 		OfferDetails.setProductDiscount(OfferDetailsDTO.getProductDiscount());
+		OfferDetails.setRetailer(OfferDetailsDTO.getRetailer());
 		OfferDetails.setProductPrice(OfferDetailsDTO.getProductPrice());
 		OfferDetails.setProductName(OfferDetailsDTO.getProductName());
 		OfferDetails.setProductId(OfferDetailsDTO.getProductId());
@@ -32,6 +33,7 @@ public class OfferDetailsUtils {
 			OfferDetailsDTO OfferDetailsDTO = new OfferDetailsDTO();
 			OfferDetailsDTO.setProductQuantity(OfferDetails.getProductQuantity());
 			OfferDetailsDTO.setProductDiscount(OfferDetails.getProductDiscount());
+			OfferDetailsDTO.setRetailer(OfferDetails.getRetailer());
 			OfferDetailsDTO.setProductPrice(OfferDetails.getProductPrice());
 			OfferDetailsDTO.setProductName(OfferDetails.getProductName());
 			OfferDetailsDTO.setProductId(OfferDetails.getProductId());

@@ -12,17 +12,16 @@ import javax.persistence.Table;
 public class PostAdvertisement {
 	
 	@Id
-	private int postId;
-	private String supplierName;
-	private String typeOfCrop;
+	private int postId; //id>0 {1,8}
+	private String typeOfCrop; // name validation
+	private String quantity; //regex
+	
 	public SupplierDetails getSupplier() {
 		return supplier;
 	}
 	public void setSupplier(SupplierDetails supplier) {
 		this.supplier = supplier;
 	}
-	private int QuantityInKgs;
-	private Long supplierNumber;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="supplier_id")
@@ -34,30 +33,20 @@ public class PostAdvertisement {
 	public void setPostId(int postId) {
 		this.postId = postId;
 	}
-	public String getSupplierName() {
-		return supplierName;
-	}
-	public void setSupplierName(String supplierName) {
-		this.supplierName = supplierName;
-	}
+	
 	public String getTypeOfCrop() {
 		return typeOfCrop;
 	}
 	public void setTypeOfCrop(String typeOfCrop) {
 		this.typeOfCrop = typeOfCrop;
 	}
-	public int getQuantityInKgs() {
-		return QuantityInKgs;
+	public String getQuantity() {
+		return quantity;
 	}
-	public void setQuantityInKgs(int quantityInKgs) {
-		QuantityInKgs = quantityInKgs;
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
 	}
-	public Long getSupplierNumber() {
-		return supplierNumber;
-	}
-	public void setSupplierNumber(Long supplierNumber) {
-		this.supplierNumber = supplierNumber;
-	}
+	
 	
 	
 

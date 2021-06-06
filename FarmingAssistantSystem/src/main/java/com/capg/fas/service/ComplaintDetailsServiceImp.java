@@ -1,5 +1,7 @@
 package com.capg.fas.service;
 
+import java.util.regex.Pattern;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,21 @@ public class ComplaintDetailsServiceImp implements IComplaintDetailsService {
 		ComplaintDetails coms= repo.findById(id).orElse(new ComplaintDetails());
 		ComplaintDetailsDTO comsdto=ComplaintDetailsUtils.convertToComplaintDetailsDto(coms);
 		return comsdto;
+		
+	}
+	public static boolean validComplaintDetails(ComplaintDetails details)
+	{
+		boolean flag=false;
+		String id=String.valueOf(details.getComplaintId());
+	
+	   if((Pattern.matches("[123456789]{1}[0-9]{8}", id))&&
+			   (Pattern.matches("^[A-Za-z]\\w{5,29}$",details.getFarmer().getFarmerName())==true)&&
+			   (Pattern.matches("^[A-Za-z]\\w{5,29}$", details.getComplaintOn())==true)&&
+			   (details.getComplaintMessage()!=null)&&(details.getComplaintType()!=null))
+		{
+			flag=true;
+		}
+		return flag;
 		
 	}
 
