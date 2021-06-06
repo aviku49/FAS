@@ -1,27 +1,58 @@
 package com.capg.fas.DTO;
 
+
+
+
 import org.springframework.stereotype.Component;
+
+import com.capg.fas.beans.FarmerDetails;
+import com.capg.fas.beans.SupplierDetails;
 
 @Component
 public class PostAdvertisementDTO {
 	
+	
 	private int postId;
-	private String supplierName;
 	private String typeOfCrop;
 	private int QuantityInKgs;
-	private Long supplierNumber;
+	private String response; // Response from farmer whether accepted or rejected;
+	
+	
+	private FarmerDetails farmer;
+	
+
+	private SupplierDetails supplier;
+
+	
+	
+	public String getResponse() {
+		return response;
+	}
+	public void setResponse(String response) {
+		this.response = response;
+	}
+	public FarmerDetails getFarmer() {
+		return farmer;
+	}
+	public void setFarmer(FarmerDetails farmer) {
+		this.farmer = farmer;
+	}
+	public SupplierDetails getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(SupplierDetails supplier) {
+		this.supplier = supplier;
+	}
+
+
+	
 	public int getPostId() {
 		return postId;
 	}
 	public void setPostId(int postId) {
 		this.postId = postId;
 	}
-	public String getSupplierName() {
-		return supplierName;
-	}
-	public void setSupplierName(String supplierName) {
-		this.supplierName = supplierName;
-	}
+	
 	public String getTypeOfCrop() {
 		return typeOfCrop;
 	}
@@ -34,16 +65,12 @@ public class PostAdvertisementDTO {
 	public void setQuantityInKgs(int quantityInKgs) {
 		QuantityInKgs = quantityInKgs;
 	}
-	public Long getSupplierNumber() {
-		return supplierNumber;
-	}
-	public void setSupplierNumber(Long supplierNumber) {
-		this.supplierNumber = supplierNumber;
-	}
+
+	
 	@Override
 	public String toString() {
-		return "PostAdvertisementDTO [postId=" + postId + ", supplierName=" + supplierName + ", typeOfCrop="
-				+ typeOfCrop + ", QuantityInKgs=" + QuantityInKgs + ", supplierNumber=" + supplierNumber + "]";
+		return "PostAdvertisementDTO [postId=" + postId + ", supplierName=" + supplier.getSupplierName() + ", typeOfCrop="
+				+ typeOfCrop + ", QuantityInKgs=" + QuantityInKgs + ", supplierNumber=" + supplier.getSupplierNumber() + "]";
 	}
 
 }

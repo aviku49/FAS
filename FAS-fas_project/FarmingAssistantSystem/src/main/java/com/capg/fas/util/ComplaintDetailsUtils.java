@@ -16,11 +16,13 @@ public class ComplaintDetailsUtils {
 	
 	public static ComplaintDetails convertToComplaintDetails(ComplaintDetailsDTO ComplaintDetailsDTO) {
 		ComplaintDetails ComplaintDetails = new ComplaintDetails();
-
+		ComplaintDetails.setComplaintFrom(ComplaintDetailsDTO.getComplaintFrom());
+		ComplaintDetails.setComplaintOn(ComplaintDetailsDTO.getComplaintOn());
 		ComplaintDetails.setComplaintMessage(ComplaintDetailsDTO.getComplaintMessage());
 		ComplaintDetails.setComplaintType(ComplaintDetailsDTO.getComplaintType());
 		ComplaintDetails.setComplaintId(ComplaintDetailsDTO.getComplaintId());
-
+		ComplaintDetails.setFarmer(ComplaintDetailsDTO.getFarmer());
+		
 		return ComplaintDetails;
 	}
 	
@@ -28,10 +30,13 @@ public class ComplaintDetailsUtils {
 		
 		public static ComplaintDetailsDTO convertToComplaintDetailsDto(ComplaintDetails ComplaintDetails) {
 			ComplaintDetailsDTO ComplaintDetailsDTO = new ComplaintDetailsDTO();
-
+			ComplaintDetailsDTO.setComplaintFrom(ComplaintDetails.getComplaintFrom());
+			ComplaintDetailsDTO.setComplaintOn(ComplaintDetails.getComplaintOn());
 			ComplaintDetailsDTO.setComplaintMessage(ComplaintDetails.getComplaintMessage());
 			ComplaintDetailsDTO.setComplaintType(ComplaintDetails.getComplaintType());
 			ComplaintDetailsDTO.setComplaintId(ComplaintDetails.getComplaintId());
+			ComplaintDetailsDTO.setComplaintId(ComplaintDetails.getComplaintId());
+			ComplaintDetailsDTO.setFarmer(ComplaintDetails.getFarmer());
 			
 			return ComplaintDetailsDTO;
 		}

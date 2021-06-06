@@ -1,16 +1,30 @@
 package com.capg.fas.DTO;
 
+
 import org.springframework.stereotype.Component;
+
+import com.capg.fas.beans.FarmerDetails;
 
 @Component
 public class ComplaintDetailsDTO {
+
 	private int complaintId;
 	private String complaintType;
 	private String complaintMessage;
 	private String complaintOn;
 	private String complaintFrom;
+	
+
+	private FarmerDetails farmer;
+	
 	public int getComplaintId() {
 		return complaintId;
+	}
+	public FarmerDetails getFarmer() {
+		return farmer;
+	}
+	public void setFarmer(FarmerDetails farmer) {
+		this.farmer = farmer;
 	}
 	public void setComplaintId(int complaintId) {
 		this.complaintId = complaintId;

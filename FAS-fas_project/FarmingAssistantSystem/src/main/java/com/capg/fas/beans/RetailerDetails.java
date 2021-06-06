@@ -1,5 +1,6 @@
 package com.capg.fas.beans;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,24 +8,48 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Retailer_Details")
+@Table(name="Retailer_info")
 public class RetailerDetails {
 	
 	@Id
 	private int retailerId;
 	private String retailerName;
 	private Long retailerNumber;
-	private String farmingTips;
 	private String retailerCategory;
+	private String farmingTips;
 	
-	@OneToMany(mappedBy="retailer", cascade=CascadeType.ALL)
+	
+	
+	
+	
+	@OneToMany(mappedBy="retailer", cascade=CascadeType.ALL) 
 	private List<OfferDetails> offerDetails;
 	
 	
+
+	public String getFarmingTips() {
+		return farmingTips;
+	}
+	public void setFarmingTips(String farmingTips) {
+		this.farmingTips = farmingTips;
+	}
+
+	
+	
+
+	
+	public List<OfferDetails> getOfferDetails() {
+		return offerDetails;
+	}
+	public void setOfferDetails(List<OfferDetails> offerDetails) {
+		this.offerDetails = offerDetails;
+	}
 	public List<OfferDetails> getofferDetails() {
 		return offerDetails;
 	}
@@ -55,12 +80,7 @@ public class RetailerDetails {
 	public void setRetailerCategory(String retailerCategory) {
 		this.retailerCategory = retailerCategory;
 	}
-	public String getFarmingTips() {
-		return farmingTips;
-	}
-	public void setFarmingTips(String farmingTips) {
-		this.farmingTips = farmingTips;
-	}
+	
 	
 	
 	

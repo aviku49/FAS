@@ -18,19 +18,26 @@ public class FarmerDetails {
 	private int farmerAge;
 	private Long farmerNumber;
 	private String farmerAddress;
-	private String typeOfCrop;
-	private String farmerComplaint;
-	private String soldCrop;
+	private String typeOfCrop; // Types of crop he is producing
+
 	
 	@OneToMany(mappedBy="farmer", cascade=CascadeType.ALL)
 	private List<ComplaintDetails> complain;
 	
+
 	
-	//@OneToMany(cascade=CascadeType.ALL)
-	//private List<Integer> offers; 
-	//@OneToMany
-	//private List<PostAdvertisement> advertise =new ArrayList<>();
-	
+	public String getTypeOfCrop() {
+		return typeOfCrop;
+	}
+	public void setTypeOfCrop(String typeOfCrop) {
+		this.typeOfCrop = typeOfCrop;
+	}
+	public List<ComplaintDetails> getComplain() {
+		return complain;
+	}
+	public void setComplain(List<ComplaintDetails> complain) {
+		this.complain = complain;
+	}
 	public int getFarmerId() {
 		return farmerId;
 	}
@@ -61,24 +68,8 @@ public class FarmerDetails {
 	public void setFarmerAddress(String farmerAddress) {
 		this.farmerAddress = farmerAddress;
 	}
-	public String getTypeOfCrop() {
-		return typeOfCrop;
-	}
-	public void setTypeOfCrop(String typeOfCrop) {
-		this.typeOfCrop = typeOfCrop;
-	}
-	public String getFarmerComplaint() {
-		return farmerComplaint;
-	}
-	public void setFarmerComplaint(String farmerComplaint) {
-		this.farmerComplaint = farmerComplaint;
-	}
-	public String getSoldCrop() {
-		return soldCrop;
-	}
-	public void setSoldCrop(String soldCrop) {
-		this.soldCrop = soldCrop;
-	}
+
+
 	
 	
 	

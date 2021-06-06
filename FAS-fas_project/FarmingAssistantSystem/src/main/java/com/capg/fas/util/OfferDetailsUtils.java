@@ -22,6 +22,8 @@ public class OfferDetailsUtils {
 		OfferDetails.setProductPrice(OfferDetailsDTO.getProductPrice());
 		OfferDetails.setProductName(OfferDetailsDTO.getProductName());
 		OfferDetails.setProductId(OfferDetailsDTO.getProductId());
+		OfferDetails.setFarmer(OfferDetailsDTO.getFarmer());
+		OfferDetails.setResponse(OfferDetailsDTO.getResponse());
 		
 		return OfferDetails;
 	}
@@ -35,6 +37,8 @@ public class OfferDetailsUtils {
 			OfferDetailsDTO.setProductPrice(OfferDetails.getProductPrice());
 			OfferDetailsDTO.setProductName(OfferDetails.getProductName());
 			OfferDetailsDTO.setProductId(OfferDetails.getProductId());
+			OfferDetailsDTO.setFarmer(OfferDetails.getFarmer());
+			OfferDetailsDTO.setResponse(OfferDetails.getResponse());
 			return OfferDetailsDTO;
 		}
 

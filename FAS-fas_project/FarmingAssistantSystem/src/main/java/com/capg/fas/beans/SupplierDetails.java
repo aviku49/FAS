@@ -16,10 +16,10 @@ public class SupplierDetails {
 	private int supplierId;
 	private String supplierName;
 	private Long supplierNumber;
+	
 	@OneToMany(mappedBy="supplier", cascade=CascadeType.ALL)
 	private List<PostAdvertisement> advertise;
-	//@OneToMany
-	//private List<ComplaintDetails> complain= new ArrayList<>();
+	
 	public int getSupplierId() {
 		return supplierId;
 	}
@@ -37,6 +37,12 @@ public class SupplierDetails {
 	}
 	public void setSupplierNumber(Long supplierNumber) {
 		this.supplierNumber = supplierNumber;
+	}
+	public List<PostAdvertisement> getAdvertise() {
+		return advertise;
+	}
+	public void setAdvertise(List<PostAdvertisement> advertise) {
+		this.advertise = advertise;
 	}
 	
 	

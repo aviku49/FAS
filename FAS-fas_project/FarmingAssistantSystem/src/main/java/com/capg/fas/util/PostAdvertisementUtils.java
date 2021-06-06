@@ -16,12 +16,14 @@ public class PostAdvertisementUtils {
 	
 	public static PostAdvertisement convertToPostAdvertisement(PostAdvertisementDTO PostAdvertisementDTO) {
 		PostAdvertisement PostAdvertisement = new PostAdvertisement();
-		
+
 		PostAdvertisement.setQuantityInKgs(PostAdvertisementDTO.getQuantityInKgs());
 		PostAdvertisement.setTypeOfCrop(PostAdvertisementDTO.getTypeOfCrop());
-		
+
 		PostAdvertisement.setPostId(PostAdvertisementDTO.getPostId());
-		
+		PostAdvertisement.setFarmer(PostAdvertisementDTO.getFarmer());
+		PostAdvertisement.setSupplier(PostAdvertisementDTO.getSupplier());
+		PostAdvertisement.setResponse(PostAdvertisementDTO.getResponse());
 		return PostAdvertisement;
 	}
 	
@@ -29,11 +31,14 @@ public class PostAdvertisementUtils {
 		
 		public static PostAdvertisementDTO convertToPostAdvertisementDto(PostAdvertisement PostAdvertisement) {
 			PostAdvertisementDTO PostAdvertisementDTO = new PostAdvertisementDTO();
-			
+		
 			PostAdvertisementDTO.setQuantityInKgs(PostAdvertisement.getQuantityInKgs());
 			PostAdvertisementDTO.setTypeOfCrop(PostAdvertisement.getTypeOfCrop());
 		
 			PostAdvertisementDTO.setPostId(PostAdvertisement.getPostId());
+			PostAdvertisementDTO.setFarmer(PostAdvertisement.getFarmer());
+			PostAdvertisementDTO.setSupplier(PostAdvertisement.getSupplier());
+			PostAdvertisementDTO.setResponse(PostAdvertisement.getResponse());
 			return PostAdvertisementDTO;
 		}
 

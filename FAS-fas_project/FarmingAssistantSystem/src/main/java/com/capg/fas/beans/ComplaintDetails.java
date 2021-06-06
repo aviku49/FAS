@@ -3,6 +3,7 @@ package com.capg.fas.beans;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,14 +15,21 @@ public class ComplaintDetails {
 	private int complaintId;
 	private String complaintType;
 	private String complaintMessage;
-
+	private String complaintOn;
+	private String complaintFrom;
+	
 	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="farmer_id")
 	private FarmerDetails farmer;
-	//@ManyToOne
-	//private SupplierDetails supplier;
 	
 	public int getComplaintId() {
 		return complaintId;
+	}
+	public FarmerDetails getFarmer() {
+		return farmer;
+	}
+	public void setFarmer(FarmerDetails farmer) {
+		this.farmer = farmer;
 	}
 	public void setComplaintId(int complaintId) {
 		this.complaintId = complaintId;
@@ -38,6 +46,17 @@ public class ComplaintDetails {
 	public void setComplaintMessage(String complaintMessage) {
 		this.complaintMessage = complaintMessage;
 	}
-
+	public String getComplaintOn() {
+		return complaintOn;
+	}
+	public void setComplaintOn(String complaintOn) {
+		this.complaintOn = complaintOn;
+	}
+	public String getComplaintFrom() {
+		return complaintFrom;
+	}
+	public void setComplaintFrom(String complaintFrom) {
+		this.complaintFrom = complaintFrom;
+	}
 
 }

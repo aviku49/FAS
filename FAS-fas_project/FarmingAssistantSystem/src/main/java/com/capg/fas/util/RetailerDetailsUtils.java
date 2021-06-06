@@ -3,6 +3,7 @@ package com.capg.fas.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.capg.fas.DTO.FarmerDetailsDTO;
 import com.capg.fas.DTO.RetailerDetailsDTO;
 import com.capg.fas.beans.RetailerDetails;
 
@@ -21,6 +22,8 @@ public class RetailerDetailsUtils {
 		RetailerDetails.setRetailerNumber(RetailerDetailsDTO.getRetailerNumber());
 		RetailerDetails.setRetailerName(RetailerDetailsDTO.getRetailerName());
 		RetailerDetails.setRetailerId(RetailerDetailsDTO.getRetailerId());
+	
+		RetailerDetails.setOfferDetails(RetailerDetailsDTO.getOfferDetails());
 		
 		return RetailerDetails;
 	}
@@ -33,6 +36,8 @@ public class RetailerDetailsUtils {
 			RetailerDetailsDTO.setRetailerNumber(RetailerDetails.getRetailerNumber());
 			RetailerDetailsDTO.setRetailerName(RetailerDetails.getRetailerName());
 			RetailerDetailsDTO.setRetailerId(RetailerDetails.getRetailerId());
+	
+			RetailerDetailsDTO.setOfferDetails(RetailerDetails.getOfferDetails());
 			return RetailerDetailsDTO;
 		}
 

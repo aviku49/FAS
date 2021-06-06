@@ -11,7 +11,7 @@ import com.capg.fas.beans.RetailerDetails;
 import com.capg.fas.service.IRetailerDetailsService;
 
 @RestController
-@RequestMapping("/api/post")
+@RequestMapping("/api/retailer")
 public class RetailerDetailsController {
 
 	@Autowired
