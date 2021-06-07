@@ -22,11 +22,11 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 	IRepositoryOfferDetails repo;
 	
 	@Override
-	public OfferDetailsDTO addOffer(OfferDetails offer) {
-		
-		OfferDetails ofs= repo.save(offer);
-		OfferDetailsDTO ofsdto=OfferDetailsUtils.convertToOfferDetailsDto(ofs);
-		return ofsdto;
+	public OfferDetailsDTO addOffer(OfferDetailsDTO offer) {
+		OfferDetails offerSimple=OfferDetailsUtils.convertToOfferDetails(offer);
+		OfferDetails offer1= repo.save(offerSimple);
+		OfferDetailsDTO offerDTO=OfferDetailsUtils.convertToOfferDetailsDto(offer1);
+		return offerDTO;
 	}
 
 	@Override
@@ -37,15 +37,18 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 		return posdto;
 	}
 
-	public static boolean validOfferDetails(OfferDetails offerdetails)
+	public static boolean validOfferDetails(OfferDetailsDTO offerdetails)
 	{
 		boolean flag=false;
-		String id=String.valueOf(offerdetails.getProductId());
-		if((Pattern.matches("[123456789]{1}[0-9]{8}", id))&&
+		String retailerId=String.valueOf(offerdetails.getRetailer().getRetailerId());
+		String productId=String.valueOf(offerdetails.getProductId());
+		
+		if((Pattern.matches("[123456789]{1}[0-9]{7}", productId))&&
 				Pattern.matches("^[A-Za-z]\\w{5,29}$",offerdetails.getProductName())&&
 				offerdetails.getProductPrice()>=0&&
 				Pattern.matches("^[0-9]\\w{100}$",offerdetails.getProductDiscount())&&
-				Pattern.matches("^[0-9]\\w{1000}$",offerdetails.getProductQuantity()))
+				Pattern.matches("^[0-9]\\w{1000}$",offerdetails.getProductQuantity())&&
+				Pattern.matches("[123456789]{1}[0-9]{7}", retailerId))
 		{
 			flag=true;
 		}

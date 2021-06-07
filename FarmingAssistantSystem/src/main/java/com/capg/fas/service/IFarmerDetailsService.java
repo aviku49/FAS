@@ -5,7 +5,7 @@ import com.capg.fas.beans.FarmerDetails;
 
 public interface IFarmerDetailsService {
 	
-	public FarmerDetailsDTO addFarmer(FarmerDetails farmer);
+	public FarmerDetailsDTO addFarmer(FarmerDetailsDTO farmer);
 	
 
 }

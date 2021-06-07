@@ -18,20 +18,21 @@ public class SupplierDetailsServiceImp implements ISupplierDetailsService {
 	IRepositorySupplierDetails repo;
 	
 	@Override
-	public SupplierDetailsDTO addSupplier(SupplierDetails supplier) {
-		SupplierDetails sup= repo.save(supplier);
-		SupplierDetailsDTO supdto=SupplierDetailsUtils.convertToSupplierDetailsDto(sup);
-		return supdto;
+	public SupplierDetailsDTO addSupplier(SupplierDetailsDTO supplier) {
+		SupplierDetails simpleSupplier=SupplierDetailsUtils.convertToSupplierDetails(supplier);
+		SupplierDetails supplier1= repo.save(simpleSupplier);
+		SupplierDetailsDTO supplierDto=SupplierDetailsUtils.convertToSupplierDetailsDto(supplier1);
+		return supplierDto;
 	}
 	
-	public static boolean validSupplier(SupplierDetails suppliers)
+	public static boolean validSupplier(SupplierDetailsDTO suppliers)
 	{
 		boolean flag=false;
-		String id=String.valueOf(suppliers.getSupplierId());
-		String str=String.valueOf(suppliers.getSupplierNumber());
-		if((Pattern.matches("[123456789]{1}[0-9]{8}", id))&&
+		String supplierId=String.valueOf(suppliers.getSupplierId());
+		String supplierNumber=String.valueOf(suppliers.getSupplierNumber());
+		if((Pattern.matches("[123456789]{1}[0-9]{7}", supplierId))&&
 				Pattern.matches("^[A-Za-z]\\w{5,29}$",suppliers.getSupplierName())&&
-				Pattern.matches("[789]{1}[0-9]{9}", str))
+				Pattern.matches("[789]{1}[0-9]{9}", supplierNumber))
 				{
 					flag=true;
 				}

@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.capg.fas.DTO.FarmerDetailsDTO;
 import com.capg.fas.DTO.OfferDetailsDTO;
 import com.capg.fas.DTO.PostAdvertisementDTO;
-import com.capg.fas.beans.FarmerDetails;
+import com.capg.fas.exception.InvalidFarmerDetailsException;
+import com.capg.fas.service.FarmerDetailsServiceImp;
 import com.capg.fas.service.IFarmerDetailsService;
 import com.capg.fas.service.IOfferDetailsService;
 import com.capg.fas.service.IPostAdvertisementService;
@@ -31,9 +32,19 @@ public class FarmerDetailsController {
 	IOfferDetailsService servi;
 	
 	@PostMapping("/add")
-	public FarmerDetailsDTO addFarmerDetails(@RequestBody FarmerDetails farmer)
+	public FarmerDetailsDTO addFarmerDetails(@RequestBody FarmerDetailsDTO farmer) throws InvalidFarmerDetailsException
 	{
-		return service.addFarmer(farmer);
+		FarmerDetailsDTO far=null;
+		boolean isValid = FarmerDetailsServiceImp.validFarmerDetails(farmer);
+				if(isValid)
+				{
+				far=service.addFarmer(farmer);
+				}
+				else
+				{
+					throw new InvalidFarmerDetailsException();
+				}
+				return far;
 	}
 	
 	@GetMapping("/get/{id}")
@@ -47,6 +58,8 @@ public class FarmerDetailsController {
 	{
 		return servi.showOffer(ids);
 	}
+	
+	
 	
 	
 	

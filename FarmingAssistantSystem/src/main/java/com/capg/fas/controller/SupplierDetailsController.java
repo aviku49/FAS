@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.capg.fas.DTO.ComplaintDetailsDTO;
 import com.capg.fas.DTO.SupplierDetailsDTO;
-import com.capg.fas.beans.SupplierDetails;
+import com.capg.fas.exception.InvalidSupplierDetailsException;
 import com.capg.fas.service.IComplaintDetailsService;
 import com.capg.fas.service.ISupplierDetailsService;
+import com.capg.fas.service.SupplierDetailsServiceImp;
 
 @RestController
 @RequestMapping("/api/supplier")
@@ -25,9 +26,19 @@ public class SupplierDetailsController {
 	IComplaintDetailsService ser;
 	
 	@PostMapping("/add")
-	public SupplierDetailsDTO addSupplierDetails(@RequestBody SupplierDetails supplier)
+	public SupplierDetailsDTO addSupplierDetails(@RequestBody SupplierDetailsDTO supplier) throws InvalidSupplierDetailsException
 	{
-		return service.addSupplier(supplier);
+		SupplierDetailsDTO supplierDetails=null;
+		boolean isValid=SupplierDetailsServiceImp.validSupplier(supplier);
+		if(isValid)
+		{
+		supplierDetails = service.addSupplier(supplier);
+		}
+		else
+		{
+			throw new InvalidSupplierDetailsException();
+		}
+		return supplierDetails;
 	}
 	
 	@GetMapping("show/{id}")

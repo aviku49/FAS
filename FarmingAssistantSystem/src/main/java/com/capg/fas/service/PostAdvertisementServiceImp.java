@@ -18,11 +18,11 @@ public class PostAdvertisementServiceImp implements IPostAdvertisementService {
 	IRepositoryPostAdvertisement repo;
 	
 	@Override
-	public PostAdvertisementDTO addPost(PostAdvertisement post) {
-		
-		PostAdvertisement pos= repo.save(post);
-		PostAdvertisementDTO posdto=PostAdvertisementUtils.convertToPostAdvertisementDto(pos);
-		return posdto;
+	public PostAdvertisementDTO addPost(PostAdvertisementDTO post) {
+		PostAdvertisement simplePost=PostAdvertisementUtils.convertToPostAdvertisement(post);
+		PostAdvertisement post1= repo.save(simplePost);
+		PostAdvertisementDTO postDto=PostAdvertisementUtils.convertToPostAdvertisementDto(post1);
+		return postDto;
 
 }
 
@@ -34,13 +34,15 @@ public class PostAdvertisementServiceImp implements IPostAdvertisementService {
 		return posdto;
 
 	}
-	public static boolean validPost(PostAdvertisement ad)
+	public static boolean validPost(PostAdvertisementDTO advertise)
 	{
 		boolean flag=false;
-		String id=String.valueOf(ad.getPostId());
-		if((Pattern.matches("[123456789]{1}[0-9]{8}", id))&&
-				(ad.getTypeOfCrop().length()<30)&&
-				Pattern.matches("^[0-9]\\w{1000}$",ad.getQuantity()))
+		String postId=String.valueOf(advertise.getPostId());
+		String supplierId=String.valueOf(advertise.getSupplier().getSupplierId());
+		if((Pattern.matches("[123456789]{1}[0-9]{7}", postId))&&
+				(advertise.getTypeOfCrop().length()<30)&&
+				Pattern.matches("^[0-9]{1000}$",advertise.getQuantity())&&
+				Pattern.matches("[123456789]{1}[0-9]{7}", supplierId))
 		{
 			flag=true;
 		}

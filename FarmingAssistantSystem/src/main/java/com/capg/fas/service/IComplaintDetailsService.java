@@ -6,7 +6,7 @@ import com.capg.fas.beans.ComplaintDetails;
 public interface IComplaintDetailsService {
 	
 	
-	public ComplaintDetailsDTO addComplaint(ComplaintDetails details);
+	public ComplaintDetailsDTO addComplaint(ComplaintDetailsDTO details);
 	
 	public ComplaintDetailsDTO showComplain(int id);
 
