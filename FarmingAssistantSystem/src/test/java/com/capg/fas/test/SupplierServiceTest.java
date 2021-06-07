@@ -29,6 +29,7 @@ public class SupplierServiceTest {
 		
 		SupplierDetailsDTO supplier_result =service.addSupplier(supplier);
 		
+		
 		assertNotNull(supplier_result);
 
 
