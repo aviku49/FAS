@@ -41,9 +41,9 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 		
 		if(
 				Pattern.matches("^[A-Za-z]\\w{5,29}$",offerdetails.getProductName())&&
-				offerdetails.getProductPrice()>=0&&
-				Pattern.matches("^[0-9]\\w{100}$",offerdetails.getProductDiscount())&&
-				Pattern.matches("^[0-9]\\w{1000}$",offerdetails.getProductQuantity())&&
+				offerdetails.getProductPrice()>0&&
+				Pattern.matches("^[0-9]{0,100}$",offerdetails.getProductDiscount())&&
+				Pattern.matches("^[0-9]{0,1000}$",offerdetails.getProductQuantity())&&
 		offerdetails.getRetailer().getRetailerId()>0)
 		{
 			flag=true;

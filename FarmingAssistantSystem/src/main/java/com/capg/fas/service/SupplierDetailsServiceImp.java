@@ -30,7 +30,7 @@ public class SupplierDetailsServiceImp implements ISupplierDetailsService {
 		boolean flag=false;
 		
 		String supplierNumber=String.valueOf(suppliers.getSupplierNumber());
-		if(Pattern.matches("^[A-Za-z]\\w{5,29}$",suppliers.getSupplierName())&&
+		if(Pattern.matches("^[A-Za-z ]\\w{5,29}$",suppliers.getSupplierName())&&
 				Pattern.matches("[789]{1}[0-9]{9}", supplierNumber))
 				{
 					flag=true;

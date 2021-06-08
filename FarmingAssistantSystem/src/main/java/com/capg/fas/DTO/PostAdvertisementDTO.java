@@ -15,6 +15,11 @@ public class PostAdvertisementDTO {
 	private String typeOfCrop;
 	private String quantity;
 	
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="supplier_id")
+	private SupplierDetails supplier;
+	
 	public SupplierDetails getSupplier() {
 		return supplier;
 	}
@@ -22,9 +27,6 @@ public class PostAdvertisementDTO {
 		this.supplier = supplier;
 	}
 	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="supplier_id")
-	private SupplierDetails supplier;
 	
 	public int getPostId() {
 		return postId;

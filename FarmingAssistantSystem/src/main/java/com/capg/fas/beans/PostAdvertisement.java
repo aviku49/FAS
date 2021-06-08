@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class PostAdvertisement {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int postId; //id>0 {1,8}
 	private String typeOfCrop; // name validation
 	private String quantity; //regex

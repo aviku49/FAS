@@ -14,13 +14,13 @@ import javax.persistence.Table;
 public class ComplaintDetails {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int complaintId;   //{1,8}, id>0
 	private String complaintType;   //length<30
 	private String complaintMessage; //length<500
 	private String complaintOn; //name validation
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="farmer_id")
 	private FarmerDetails farmer;  //null
 	

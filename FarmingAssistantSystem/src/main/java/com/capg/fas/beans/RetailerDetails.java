@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,7 +19,7 @@ import javax.persistence.Table;
 public class RetailerDetails {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int retailerId; //id>0 {1,8}
 	private String retailerName; //name validation	
 	private Long retailerNumber; // number validation
@@ -26,7 +27,7 @@ public class RetailerDetails {
 	private String retailerCategory; // length<25
 	
 	
-	@OneToMany(mappedBy="retailer", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="retailer",fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<OfferDetails> offerDetails;
 	
 	

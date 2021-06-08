@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 public class FarmerDetails {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int farmerId; //{1,8} ,id>0
 	private String farmerName; //name validation	
 	private int farmerAge; //>18&&<100;
@@ -24,7 +25,7 @@ public class FarmerDetails {
 	private String typeOfCrop; // length<30
 	
 	
-	@OneToMany(mappedBy="farmer", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="farmer",fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<ComplaintDetails> complain;
 	
 	public List<ComplaintDetails> getComplain() {

@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class SupplierDetails {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int supplierId; //id>0 {1,8}
 	private String supplierName; //name validation
 	private Long supplierNumber; // number validation

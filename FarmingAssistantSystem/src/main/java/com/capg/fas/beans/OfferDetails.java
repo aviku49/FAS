@@ -14,14 +14,14 @@ import javax.persistence.Table;
 public class OfferDetails {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int productId; //{1,8} id>0
 	private String productName; //name validation
 	private int productPrice; // p>=0 && 
 	private String productDiscount; // regex
 	private String productQuantity; // regex
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="retailer_id")
 	   private RetailerDetails retailer;
 	

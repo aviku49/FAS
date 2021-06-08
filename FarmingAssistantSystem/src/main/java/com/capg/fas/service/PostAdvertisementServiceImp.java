@@ -31,7 +31,7 @@ public class PostAdvertisementServiceImp implements IPostAdvertisementService {
 	@Override
 	public PostAdvertisementDTO getPost(int id) {
 		
-		PostAdvertisement list= repo.findById(id).orElse(new PostAdvertisement());
+		PostAdvertisement list= repo.findById(id).get();
 		PostAdvertisementDTO posdto=PostAdvertisementUtils.convertToPostAdvertisementDto(list);
 		return posdto;
 
@@ -41,7 +41,8 @@ public class PostAdvertisementServiceImp implements IPostAdvertisementService {
 		boolean flag=false;
 		
 		if(
-				(advertise.getTypeOfCrop().length()<30))
+				(advertise.getTypeOfCrop().length()<30)&&
+				(advertise.getQuantity()!=null))
 		{
 			flag=true;
 		}
