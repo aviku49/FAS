@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class SupplierDetails {
 	private String supplierName; //name validation
 	private Long supplierNumber; // number validation
 	
-	@OneToMany(mappedBy="supplier", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="supplier",fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<PostAdvertisement> advertise;
 	
 	public int getSupplierId() {

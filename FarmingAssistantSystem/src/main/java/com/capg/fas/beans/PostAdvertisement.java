@@ -2,6 +2,7 @@ package com.capg.fas.beans;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,16 +20,18 @@ public class PostAdvertisement {
 	private String typeOfCrop; // name validation
 	private String quantity; //regex
 	
+	
+	
+	@ManyToOne
+	@JoinColumn(name="supplier_id")
+	private SupplierDetails supplier;
+	
 	public SupplierDetails getSupplier() {
 		return supplier;
 	}
 	public void setSupplier(SupplierDetails supplier) {
 		this.supplier = supplier;
 	}
-	
-	@ManyToOne(cascade=CascadeType.PERSIST)
-	@JoinColumn(name="supplier_id")
-	private SupplierDetails supplier;
 	
 	public int getPostId() {
 		return postId;
