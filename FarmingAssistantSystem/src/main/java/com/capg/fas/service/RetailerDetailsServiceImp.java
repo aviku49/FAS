@@ -26,11 +26,10 @@ public class RetailerDetailsServiceImp implements IRetailerDetailsService{
 	public static boolean validRetailerDetails(RetailerDetailsDTO retailers)
 	{
 		boolean flag=false;
-		String retailerId=String.valueOf(retailers.getRetailerId());
+		
 		String retailerNumber=String.valueOf(retailers.getRetailerNumber());
 		
-		if((Pattern.matches("[123456789]{1}[0-9]{7}", retailerId))&&
-				Pattern.matches("^[A-Za-z]\\w{5,29}$",retailers.getRetailerName())&&
+		if(Pattern.matches("^[A-Za-z]\\w{5,29}$",retailers.getRetailerName())&&
 						Pattern.matches("[789]{1}[0-9]{9}", retailerNumber)&&
 						(retailers.getFarmingTips().length()<1000)&&
 						(retailers.getRetailerCategory().length()<25))

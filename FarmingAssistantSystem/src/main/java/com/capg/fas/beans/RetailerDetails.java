@@ -1,14 +1,16 @@
 package com.capg.fas.beans;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +18,7 @@ import javax.persistence.Table;
 public class RetailerDetails {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int retailerId; //id>0 {1,8}
 	private String retailerName; //name validation	
 	private Long retailerNumber; // number validation
@@ -32,20 +35,15 @@ public class RetailerDetails {
 //	private List<OfferDetails> offerDetails=new ArrayList<>();
 	
 	
+		
+	public int getRetailerId() {
+		return retailerId;
+	}
 	public List<OfferDetails> getOfferDetails() {
 		return offerDetails;
 	}
 	public void setOfferDetails(List<OfferDetails> offerDetails) {
 		this.offerDetails = offerDetails;
-	}
-	public List<OfferDetails> getofferDetails() {
-		return offerDetails;
-	}
-	public void setofferDetials(List<OfferDetails> offerDetails) {
-		this.offerDetails = offerDetails;
-	}
-	public int getRetailerId() {
-		return retailerId;
 	}
 	public void setRetailerId(int retailerId) {
 		this.retailerId = retailerId;

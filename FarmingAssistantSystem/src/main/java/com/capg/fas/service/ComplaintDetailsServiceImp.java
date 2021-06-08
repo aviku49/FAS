@@ -39,12 +39,10 @@ public class ComplaintDetailsServiceImp implements IComplaintDetailsService {
 	public static boolean validComplaintDetails(ComplaintDetailsDTO details)
 	{
 		boolean flag=false;
-		String complainId=String.valueOf(details.getComplaintId());
-		String farmerId=String.valueOf(details.getFarmer().getFarmerId());
 		
 		
-	   if((Pattern.matches("[123456789]{1}[0-9]{7}", complainId))&&
-			   (Pattern.matches("[123456789]{1}[0-9]{7}", farmerId))&&
+		
+	   if((details.getFarmer().getFarmerId()>0)&&
 			   (Pattern.matches("^[A-Za-z]\\w{5,29}$", details.getComplaintOn())==true)&&
 			   (details.getComplaintMessage()!=null)&&(details.getComplaintType()!=null))
 		{

@@ -2,6 +2,8 @@ package com.capg.fas.beans;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 public class OfferDetails {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int productId; //{1,8} id>0
 	private String productName; //name validation
 	private int productPrice; // p>=0 && 

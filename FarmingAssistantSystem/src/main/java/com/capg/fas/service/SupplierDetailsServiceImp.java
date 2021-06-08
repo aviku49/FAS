@@ -28,10 +28,9 @@ public class SupplierDetailsServiceImp implements ISupplierDetailsService {
 	public static boolean validSupplier(SupplierDetailsDTO suppliers)
 	{
 		boolean flag=false;
-		String supplierId=String.valueOf(suppliers.getSupplierId());
+		
 		String supplierNumber=String.valueOf(suppliers.getSupplierNumber());
-		if((Pattern.matches("[123456789]{1}[0-9]{7}", supplierId))&&
-				Pattern.matches("^[A-Za-z]\\w{5,29}$",suppliers.getSupplierName())&&
+		if(Pattern.matches("^[A-Za-z]\\w{5,29}$",suppliers.getSupplierName())&&
 				Pattern.matches("[789]{1}[0-9]{9}", supplierNumber))
 				{
 					flag=true;

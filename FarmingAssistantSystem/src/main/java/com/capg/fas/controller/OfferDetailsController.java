@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capg.fas.DTO.OfferDetailsDTO;
-import com.capg.fas.beans.OfferDetails;
+
 import com.capg.fas.exception.InvalidOfferDetailsException;
 import com.capg.fas.service.IOfferDetailsService;
 import com.capg.fas.service.OfferDetailsServiceImp;

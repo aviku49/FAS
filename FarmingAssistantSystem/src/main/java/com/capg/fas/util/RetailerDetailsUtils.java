@@ -22,6 +22,8 @@ public class RetailerDetailsUtils {
 		RetailerDetails.setOfferDetails(RetailerDetailsDTO.getOfferDetails());
 		RetailerDetails.setRetailerName(RetailerDetailsDTO.getRetailerName());
 		RetailerDetails.setRetailerId(RetailerDetailsDTO.getRetailerId());
+		RetailerDetails.setFarmingTips(RetailerDetailsDTO.getFarmingTips());
+		
 		
 		return RetailerDetails;
 	}
@@ -35,6 +37,7 @@ public class RetailerDetailsUtils {
 			RetailerDetailsDTO.setOfferDetails(RetailerDetails.getOfferDetails());
 			RetailerDetailsDTO.setRetailerName(RetailerDetails.getRetailerName());
 			RetailerDetailsDTO.setRetailerId(RetailerDetails.getRetailerId());
+			RetailerDetailsDTO.setFarmingTips(RetailerDetails.getFarmingTips());
 			return RetailerDetailsDTO;
 		}
 

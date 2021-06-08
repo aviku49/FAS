@@ -7,13 +7,10 @@ import org.springframework.stereotype.Service;
 
 
 import com.capg.fas.DTO.OfferDetailsDTO;
-import com.capg.fas.DTO.PostAdvertisementDTO;
 import com.capg.fas.beans.OfferDetails;
-import com.capg.fas.beans.PostAdvertisement;
 import com.capg.fas.repository.IRepositoryOfferDetails;
 
 import com.capg.fas.util.OfferDetailsUtils;
-import com.capg.fas.util.PostAdvertisementUtils;
 
 @Service
 public class OfferDetailsServiceImp implements IOfferDetailsService {
@@ -40,15 +37,14 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 	public static boolean validOfferDetails(OfferDetailsDTO offerdetails)
 	{
 		boolean flag=false;
-		String retailerId=String.valueOf(offerdetails.getRetailer().getRetailerId());
-		String productId=String.valueOf(offerdetails.getProductId());
 		
-		if((Pattern.matches("[123456789]{1}[0-9]{7}", productId))&&
+		
+		if(
 				Pattern.matches("^[A-Za-z]\\w{5,29}$",offerdetails.getProductName())&&
 				offerdetails.getProductPrice()>=0&&
 				Pattern.matches("^[0-9]\\w{100}$",offerdetails.getProductDiscount())&&
 				Pattern.matches("^[0-9]\\w{1000}$",offerdetails.getProductQuantity())&&
-				Pattern.matches("[123456789]{1}[0-9]{7}", retailerId))
+		offerdetails.getRetailer().getRetailerId()>0)
 		{
 			flag=true;
 		}

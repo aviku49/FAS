@@ -28,20 +28,15 @@ public class RetailerDetailsDTO {
 //	private List<OfferDetails> offerDetails=new ArrayList<>();
 	
 	
+		
+	public int getRetailerId() {
+		return retailerId;
+	}
 	public List<OfferDetails> getOfferDetails() {
 		return offerDetails;
 	}
 	public void setOfferDetails(List<OfferDetails> offerDetails) {
 		this.offerDetails = offerDetails;
-	}
-	public List<OfferDetails> getofferDetails() {
-		return offerDetails;
-	}
-	public void setofferDetials(List<OfferDetails> offerDetails) {
-		this.offerDetails = offerDetails;
-	}
-	public int getRetailerId() {
-		return retailerId;
 	}
 	public void setRetailerId(int retailerId) {
 		this.retailerId = retailerId;
@@ -76,4 +71,8 @@ public class RetailerDetailsDTO {
 				+ retailerNumber + ", farmingTips=" + farmingTips + ", retailerCategory=" + retailerCategory
 				+ ", offerDetails=" + offerDetails + "]";
 	}
+	
+	
+	
+	
 }

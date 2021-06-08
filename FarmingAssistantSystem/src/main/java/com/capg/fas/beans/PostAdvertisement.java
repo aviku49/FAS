@@ -2,6 +2,8 @@ package com.capg.fas.beans;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 public class PostAdvertisement {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int postId; //id>0 {1,8}
 	private String typeOfCrop; // name validation
 	private String quantity; //regex
@@ -23,7 +26,7 @@ public class PostAdvertisement {
 		this.supplier = supplier;
 	}
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="supplier_id")
 	private SupplierDetails supplier;
 	
