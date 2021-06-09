@@ -19,12 +19,12 @@ public class FarmerDetailsUtils {
 		FarmerDetails FarmerDetails = new FarmerDetails();
 		
 		FarmerDetails.setComplain(FarmerDetailsDTO.getComplain());
-		FarmerDetails.setTypeOfCrop(FarmerDetailsDTO.getTypeOfCrop());
 		FarmerDetails.setFarmerAddress(FarmerDetailsDTO.getFarmerAddress());
 		FarmerDetails.setFarmerNumber(FarmerDetailsDTO.getFarmerNumber());
 		FarmerDetails.setFarmerAge(FarmerDetailsDTO.getFarmerAge());
 		FarmerDetails.setFarmerName(FarmerDetailsDTO.getFarmerName());
 		FarmerDetails.setFarmerId(FarmerDetailsDTO.getFarmerId());
+		FarmerDetails.setFarmerEmail(FarmerDetailsDTO.getFarmerEmail());
 		
 		return FarmerDetails;
 	}
@@ -35,12 +35,12 @@ public class FarmerDetailsUtils {
 			FarmerDetailsDTO FarmerDetailsDTO = new FarmerDetailsDTO();
 		
 			FarmerDetailsDTO.setComplain(FarmerDetails.getComplain());
-			FarmerDetailsDTO.setTypeOfCrop(FarmerDetails.getTypeOfCrop());
 			FarmerDetailsDTO.setFarmerAddress(FarmerDetails.getFarmerAddress());
 			FarmerDetailsDTO.setFarmerNumber(FarmerDetails.getFarmerNumber());
 			FarmerDetailsDTO.setFarmerAge(FarmerDetails.getFarmerAge());
 			FarmerDetailsDTO.setFarmerName(FarmerDetails.getFarmerName());
 			FarmerDetailsDTO.setFarmerId(FarmerDetails.getFarmerId());
+			FarmerDetailsDTO.setFarmerEmail(FarmerDetails.getFarmerEmail());
 			return FarmerDetailsDTO;
 		}
 

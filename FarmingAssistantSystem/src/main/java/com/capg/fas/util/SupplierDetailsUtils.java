@@ -21,6 +21,7 @@ public class SupplierDetailsUtils {
 		SupplierDetails.setSupplierName(SupplierDetailsDTO.getSupplierName());
 		SupplierDetails.setAdvertise(SupplierDetailsDTO.getAdvertise());
 		SupplierDetails.setSupplierId(SupplierDetailsDTO.getSupplierId());
+		SupplierDetails.setSupplierEmail(SupplierDetailsDTO.getSupplierEmail());
 		return SupplierDetails;
 	}
 	
@@ -32,6 +33,7 @@ public class SupplierDetailsUtils {
 			SupplierDetailsDTO.setSupplierName(SupplierDetails.getSupplierName());
 			SupplierDetailsDTO.setAdvertise(SupplierDetails.getAdvertise());
 			SupplierDetailsDTO.setSupplierId(SupplierDetails.getSupplierId());
+			SupplierDetailsDTO.setSupplierEmail(SupplierDetails.getSupplierEmail());
 			return SupplierDetailsDTO;
 		}
 }

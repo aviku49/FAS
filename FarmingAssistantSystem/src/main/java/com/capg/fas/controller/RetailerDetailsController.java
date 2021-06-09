@@ -12,6 +12,14 @@ import com.capg.fas.exception.InvalidRetailerDetailsException;
 import com.capg.fas.service.IRetailerDetailsService;
 import com.capg.fas.service.RetailerDetailsServiceImp;
 
+
+/*
+ * @Author 1 : Rajesh
+ * @Author 2 : Naveen
+ * Date : 8/june/2021
+ * Description : This is controller class for retailer
+ * Exception : InvalidRetailerDetailsException
+ */
 @RestController
 @RequestMapping("/api/retailer")
 public class RetailerDetailsController {

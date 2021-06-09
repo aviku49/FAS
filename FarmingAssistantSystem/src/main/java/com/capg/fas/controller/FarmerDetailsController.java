@@ -1,5 +1,7 @@
 package com.capg.fas.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,15 @@ import com.capg.fas.service.IFarmerDetailsService;
 import com.capg.fas.service.IOfferDetailsService;
 import com.capg.fas.service.IPostAdvertisementService;
 
+
+/*
+ * @Author : Avinash
+ * Date : 8/june/2021
+ * Description : This is controller class for farmer
+ * Exception : InvalidFarmerDetailsException
+ * 
+ * 
+ */
 @RestController
 @RequestMapping("/api/farmer")
 public class FarmerDetailsController {
@@ -47,17 +58,31 @@ public class FarmerDetailsController {
 				return far;
 	}
 	
-	@GetMapping("/get/{id}")
+	@GetMapping("/getpost/{id}")
 	public PostAdvertisementDTO showAdvertisement(@PathVariable int id)
 	{
 		return ser.getPost(id);
 	}
 	
-	@GetMapping("show/{ids}")
+	@GetMapping("showoffer/{ids}")
 	public OfferDetailsDTO showOffer(@PathVariable int ids)
 	{
 		return servi.showOffer(ids);
 	}
+	
+	@GetMapping("/getpost/all")
+	public List<PostAdvertisementDTO> showAllPost()
+	{
+		return ser.getAllPost();
+	}
+	
+	@GetMapping("/showoffer/all")
+	public List<OfferDetailsDTO> getALLOffer()
+	{
+		return servi.getAllOffer();
+	}
+	
+	
 	
 	
 	

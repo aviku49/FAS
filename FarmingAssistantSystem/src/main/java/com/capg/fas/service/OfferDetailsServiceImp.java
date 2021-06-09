@@ -1,5 +1,7 @@
 package com.capg.fas.service;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,15 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 	@Autowired
 	IRepositoryOfferDetails repo;
 	
+	/*
+	 * @Author 1: Rajesh
+	 * @Author 2: Naveen
+	 * Date :7/june/2021
+	 * Description : This is serviceImp for add offer
+	 * Params :  OfferDetailsDTO
+	 * return : OfferDetailsDTO
+	 * 
+	 */
 	@Override
 	public OfferDetailsDTO addOffer(OfferDetailsDTO offer) {
 		OfferDetails offerSimple=OfferDetailsUtils.convertToOfferDetails(offer);
@@ -26,12 +37,30 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 		return offerDTO;
 	}
 
+	/*
+	 * @Author 1: Rajesh
+	 * @Author 2: Naveen
+	 * Date :7/june/2021
+	 * Description : This is serviceImp for  find offer by id
+	 * Params :  int
+	 * return : OfferDetailsDTO
+	 * 
+	 */
 	@Override
 	public OfferDetailsDTO showOffer(int id) {
 		
-		OfferDetails list= repo.findById(id).orElse(new OfferDetails());
-		OfferDetailsDTO posdto=OfferDetailsUtils.convertToOfferDetailsDto(list);
-		return posdto;
+		Optional<OfferDetails> list= repo.findById(id);
+		if(list.isPresent())
+		{
+			OfferDetails offer=list.get();
+			OfferDetailsDTO offerDto= OfferDetailsUtils.convertToOfferDetailsDto(offer);
+			return offerDto;
+		}
+		else
+		{
+			return null;
+		}
+		
 	}
 
 	public static boolean validOfferDetails(OfferDetailsDTO offerdetails)
@@ -41,6 +70,7 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 		
 		if(
 				Pattern.matches("^[A-Za-z]\\w{5,29}$",offerdetails.getProductName())&&
+				(offerdetails.getFarmingTips().length()<500)&&
 				offerdetails.getProductPrice()>0&&
 				Pattern.matches("^[0-9]{0,100}$",offerdetails.getProductDiscount())&&
 				Pattern.matches("^[0-9]{0,1000}$",offerdetails.getProductQuantity())&&
@@ -50,5 +80,20 @@ public class OfferDetailsServiceImp implements IOfferDetailsService {
 		}
 		return flag;
 		
+	}
+
+	/*
+	 * @Author 1: Rajesh
+	 * @Author 2: Naveen
+	 * Date :7/june/2021
+	 * Description : This is serviceImp for  find all offer 
+	 * return : List<OfferDetailsDTO>
+	 * 
+	 */
+	@Override
+	public List<OfferDetailsDTO> getAllOffer() {
+		List<OfferDetails> list= repo.findAll();
+		List<OfferDetailsDTO> listDto=OfferDetailsUtils.convertToOfferDetailsDTOList(list);
+		return listDto;
 	}
 }

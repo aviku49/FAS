@@ -1,6 +1,5 @@
 package com.capg.fas.DTO;
 
-import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -8,15 +7,23 @@ import org.springframework.stereotype.Component;
 
 import com.capg.fas.beans.SupplierDetails;
 
+/*
+ * @Author 1 : Sai Supriya
+ * @Author 2 : Sowgandhika 
+ * Date : 4/June/2021
+ * Description : This is DTO class for postAdvertisement
+ * 
+ */
 @Component
 public class PostAdvertisementDTO {
 	
 	private int postId;
-	private String typeOfCrop;
-	private String quantity;
+	private String typeOfCrop; 
+	private String quantity; 
 	
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	
+	@ManyToOne
 	@JoinColumn(name="supplier_id")
 	private SupplierDetails supplier;
 	
@@ -26,7 +33,6 @@ public class PostAdvertisementDTO {
 	public void setSupplier(SupplierDetails supplier) {
 		this.supplier = supplier;
 	}
-	
 	
 	public int getPostId() {
 		return postId;

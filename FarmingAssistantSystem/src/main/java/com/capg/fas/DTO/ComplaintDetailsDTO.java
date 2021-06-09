@@ -1,6 +1,5 @@
 package com.capg.fas.DTO;
 
-import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -8,14 +7,20 @@ import org.springframework.stereotype.Component;
 
 import com.capg.fas.beans.FarmerDetails;
 
+/*
+ * @Author : Avinash
+ * Date : 4/June/2021
+ * Description : This is DTO class for complain
+ * 
+ */
 @Component
 public class ComplaintDetailsDTO {
-	private int complaintId;   //{1,8}, id>0
-	private String complaintType;   //length<30
-	private String complaintMessage; //length<500
-	private String complaintOn; //name validation
+	private int complaintId;   
+	private String complaintType;   
+	private String complaintMessage; 
+	private String complaintOn; 
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="farmer_id")
 	private FarmerDetails farmer;  //null
 	
@@ -55,6 +60,7 @@ public class ComplaintDetailsDTO {
 				+ ", complaintMessage=" + complaintMessage + ", complaintOn=" + complaintOn + ", farmer=" + farmer
 				+ "]";
 	}
+	
 	
 
 }

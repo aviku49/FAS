@@ -11,6 +11,14 @@ import com.capg.fas.exception.InvalidPostAdvertisementException;
 import com.capg.fas.service.IPostAdvertisementService;
 import com.capg.fas.service.PostAdvertisementServiceImp;
 
+
+/*
+ * @Author 1 : Sowgandhika 
+ * @Author 2 : Sai Supriya
+ * Date : 8/june/2021
+ * Description : This is controller class for postAdvertisement
+ * Exception : InvalidPostAdvertisementException
+ */
 @RestController
 @RequestMapping("/api/post")
 public class PostAdvertisementController {

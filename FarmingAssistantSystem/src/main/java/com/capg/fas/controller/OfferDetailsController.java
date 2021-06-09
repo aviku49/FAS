@@ -12,6 +12,15 @@ import com.capg.fas.exception.InvalidOfferDetailsException;
 import com.capg.fas.service.IOfferDetailsService;
 import com.capg.fas.service.OfferDetailsServiceImp;
 
+
+
+/*
+ * @Author 1 : Rajesh
+ * @Author 2 : Naveen
+ * Date : 8/june/2021
+ * Description : This is controller class for offer
+ * Exception : InvalidOfferDetailsException
+ */
 @RestController
 @RequestMapping("/api/offer")
 public class OfferDetailsController {

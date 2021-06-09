@@ -17,6 +17,14 @@ public class FarmerDetailsServiceImp implements IFarmerDetailsService {
 	@Autowired
 	IRepositoryFarmerDetails repo;
 	
+	/*
+	 * @Author : Avinash
+	 * Date :7/june/2021
+	 * Description : This is serviceImp for  add farmer
+	 * Params :  FarmerDetailsDTO
+	 * return : FarmerDetailsDTO
+	 * 
+	 */
 	@Override
 	public FarmerDetailsDTO addFarmer(FarmerDetailsDTO farmer) {
 		FarmerDetails simpleFarmer=FarmerDetailsUtils.convertToFarmerDetails(farmer);
@@ -36,7 +44,7 @@ public class FarmerDetailsServiceImp implements IFarmerDetailsService {
 								(farmerValid.getFarmerAge()>18 && farmerValid.getFarmerAge()<100)&&
 								Pattern.matches("[789]{1}[0-9]{9}", farmerNumber)&&
 								(farmerValid.getFarmerAddress().length()<100)&&
-								(farmerValid.getTypeOfCrop().length()<30))
+								Pattern.matches("^(.+)@(.+)$", farmerValid.getFarmerEmail()))
 				{
 					flag=true;
 				}

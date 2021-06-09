@@ -1,14 +1,19 @@
 package com.capg.fas.beans;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+/*
+ * @Author 1 : Sai Supriya
+ * @Author 2 : Sowgandhika 
+ * Date : 4/june/2021
+ * Description : This is entity class for postAdvertisement
+ * 
+ */
 
 @Entity
 @Table(name="post_info")
@@ -16,9 +21,9 @@ public class PostAdvertisement {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	private int postId; //id>0 {1,8}
-	private String typeOfCrop; // name validation
-	private String quantity; //regex
+	private int postId;
+	private String typeOfCrop; 
+	private String quantity; 
 	
 	
 	

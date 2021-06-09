@@ -22,8 +22,7 @@ public class RetailerDetailsUtils {
 		RetailerDetails.setOfferDetails(RetailerDetailsDTO.getOfferDetails());
 		RetailerDetails.setRetailerName(RetailerDetailsDTO.getRetailerName());
 		RetailerDetails.setRetailerId(RetailerDetailsDTO.getRetailerId());
-		RetailerDetails.setFarmingTips(RetailerDetailsDTO.getFarmingTips());
-		
+		RetailerDetails.setRetailerEmail(RetailerDetailsDTO.getRetailerEmail());
 		
 		return RetailerDetails;
 	}
@@ -37,7 +36,8 @@ public class RetailerDetailsUtils {
 			RetailerDetailsDTO.setOfferDetails(RetailerDetails.getOfferDetails());
 			RetailerDetailsDTO.setRetailerName(RetailerDetails.getRetailerName());
 			RetailerDetailsDTO.setRetailerId(RetailerDetails.getRetailerId());
-			RetailerDetailsDTO.setFarmingTips(RetailerDetails.getFarmingTips());
+			RetailerDetailsDTO.setRetailerEmail(RetailerDetails.getRetailerEmail());
+			
 			return RetailerDetailsDTO;
 		}
 

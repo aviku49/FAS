@@ -1,5 +1,7 @@
 package com.capg.fas.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +17,14 @@ import com.capg.fas.service.IComplaintDetailsService;
 import com.capg.fas.service.ISupplierDetailsService;
 import com.capg.fas.service.SupplierDetailsServiceImp;
 
+
+/*
+ * @Author 1 : Sowgandhika 
+ * @Author 2 : Sai Supriya
+ * Date : 8/june/2021
+ * Description : This is controller class for supplier
+ * Exception : InvalidSupplierDetailsException
+ */
 @RestController
 @RequestMapping("/api/supplier")
 public class SupplierDetailsController {
@@ -41,9 +51,15 @@ public class SupplierDetailsController {
 		return supplierDetails;
 	}
 	
-	@GetMapping("show/{id}")
+	@GetMapping("showcomplains/{id}")
 	public ComplaintDetailsDTO showComplain(@PathVariable int id)
 	{
 		return ser.showComplain(id);
+	}
+	
+	@GetMapping("getcomplains/all")
+	public List<ComplaintDetailsDTO> getAllComplaint()
+	{
+		return ser.getAllComplaint();
 	}
 }

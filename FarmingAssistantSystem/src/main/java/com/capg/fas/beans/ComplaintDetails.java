@@ -1,6 +1,5 @@
 package com.capg.fas.beans;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+/*
+ * @Author : Avinash
+ * Date : 4/june/2021
+ * Description : This is entity class for complain
+ * 
+ */
 
 @Entity
 @Table(name="complaint_info")
@@ -15,10 +20,10 @@ public class ComplaintDetails {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	private int complaintId;   //{1,8}, id>0
-	private String complaintType;   //length<30
-	private String complaintMessage; //length<500
-	private String complaintOn; //name validation
+	private int complaintId;   
+	private String complaintType;   
+	private String complaintMessage; 
+	private String complaintOn; 
 	
 	@ManyToOne
 	@JoinColumn(name="farmer_id")

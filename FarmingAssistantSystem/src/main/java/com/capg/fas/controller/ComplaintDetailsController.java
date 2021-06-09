@@ -13,6 +13,18 @@ import com.capg.fas.exception.InvalidComplaintDetailsException;
 import com.capg.fas.service.ComplaintDetailsServiceImp;
 import com.capg.fas.service.IComplaintDetailsService;
 
+
+/*
+ * @Author : Avinash
+ * Date : 8/june/2021
+ * Description : This is controller class for complain
+ * Exception : InvalidComplaintDetailsException
+ * 
+ * 
+ */
+
+
+
 @RestController
 @RequestMapping("/api/complain")
 public class ComplaintDetailsController {
@@ -22,7 +34,7 @@ public class ComplaintDetailsController {
 	IComplaintDetailsService service;
 	
 	@PostMapping("/add")
-	public ComplaintDetailsDTO addFarmerDetails(@RequestBody ComplaintDetailsDTO details) throws InvalidComplaintDetailsException
+	public ComplaintDetailsDTO addComplaintDetails(@RequestBody ComplaintDetailsDTO details) throws InvalidComplaintDetailsException
 	{
 		ComplaintDetailsDTO complain=null;
 		boolean isValid=ComplaintDetailsServiceImp.validComplaintDetails(details);

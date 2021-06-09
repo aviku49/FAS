@@ -17,6 +17,16 @@ public class SupplierDetailsServiceImp implements ISupplierDetailsService {
 	@Autowired
 	IRepositorySupplierDetails repo;
 	
+	
+	/*
+	 * @Author 1 : Sai Supriya
+	 * @Author 2 : Sowgandhika 
+	 * Date : 7/june/2021
+	 * Description : This is serviceImp  for  add supplier
+	 * params : SupplierDetailsDTO
+	 * return : SupplierDetailsDTO
+	 * 
+	 */
 	@Override
 	public SupplierDetailsDTO addSupplier(SupplierDetailsDTO supplier) {
 		SupplierDetails simpleSupplier=SupplierDetailsUtils.convertToSupplierDetails(supplier);
@@ -31,7 +41,8 @@ public class SupplierDetailsServiceImp implements ISupplierDetailsService {
 		
 		String supplierNumber=String.valueOf(suppliers.getSupplierNumber());
 		if(Pattern.matches("^[A-Za-z ]\\w{5,29}$",suppliers.getSupplierName())&&
-				Pattern.matches("[789]{1}[0-9]{9}", supplierNumber))
+				Pattern.matches("[789]{1}[0-9]{9}", supplierNumber)&&
+				Pattern.matches("^(.+)@(.+)$", suppliers.getSupplierEmail()))
 				{
 					flag=true;
 				}

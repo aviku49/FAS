@@ -23,6 +23,8 @@ public class OfferDetailsUtils {
 		OfferDetails.setProductPrice(OfferDetailsDTO.getProductPrice());
 		OfferDetails.setProductName(OfferDetailsDTO.getProductName());
 		OfferDetails.setProductId(OfferDetailsDTO.getProductId());
+		OfferDetails.setFarmingTips(OfferDetailsDTO.getFarmingTips());
+		
 		
 		return OfferDetails;
 	}
@@ -37,6 +39,7 @@ public class OfferDetailsUtils {
 			OfferDetailsDTO.setProductPrice(OfferDetails.getProductPrice());
 			OfferDetailsDTO.setProductName(OfferDetails.getProductName());
 			OfferDetailsDTO.setProductId(OfferDetails.getProductId());
+			OfferDetailsDTO.setFarmingTips(OfferDetails.getFarmingTips());
 			return OfferDetailsDTO;
 		}
 
