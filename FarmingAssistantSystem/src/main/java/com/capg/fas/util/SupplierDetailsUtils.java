@@ -16,7 +16,9 @@ public class SupplierDetailsUtils {
 	}
 	
 	public static SupplierDetails convertToSupplierDetails(SupplierDetailsDTO SupplierDetailsDTO) {
+		
 		SupplierDetails SupplierDetails = new SupplierDetails();
+		
 		SupplierDetails.setSupplierNumber(SupplierDetailsDTO.getSupplierNumber());
 		SupplierDetails.setSupplierName(SupplierDetailsDTO.getSupplierName());
 		SupplierDetails.setAdvertise(SupplierDetailsDTO.getAdvertise());
@@ -28,7 +30,9 @@ public class SupplierDetailsUtils {
 	
 		
 		public static SupplierDetailsDTO convertToSupplierDetailsDto(SupplierDetails SupplierDetails) {
+			
 			SupplierDetailsDTO SupplierDetailsDTO = new SupplierDetailsDTO();
+			
 			SupplierDetailsDTO.setSupplierNumber(SupplierDetails.getSupplierNumber());
 			SupplierDetailsDTO.setSupplierName(SupplierDetails.getSupplierName());
 			SupplierDetailsDTO.setAdvertise(SupplierDetails.getAdvertise());

@@ -1,7 +1,5 @@
 package com.capg.fas.DTO;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 import org.springframework.stereotype.Component;
 
@@ -23,8 +21,7 @@ public class PostAdvertisementDTO {
 	
 	
 	
-	@ManyToOne
-	@JoinColumn(name="supplier_id")
+	
 	private SupplierDetails supplier;
 	
 	public SupplierDetails getSupplier() {

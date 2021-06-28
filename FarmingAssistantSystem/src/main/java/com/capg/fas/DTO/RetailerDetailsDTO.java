@@ -2,10 +2,7 @@ package com.capg.fas.DTO;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+
 
 import org.springframework.stereotype.Component;
 
@@ -23,14 +20,11 @@ public class RetailerDetailsDTO {
 	
 	private int retailerId; 
 	private String retailerName;	
-	@Column(unique=true)
 	private Long retailerNumber;
-	@Column(unique=true)
 	private String retailerEmail;
 	private String retailerCategory; 
 	
 	
-	@OneToMany(mappedBy="retailer",fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<OfferDetails> offerDetails;
 
 

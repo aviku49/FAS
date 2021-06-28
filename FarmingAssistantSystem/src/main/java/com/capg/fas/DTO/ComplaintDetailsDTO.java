@@ -1,7 +1,6 @@
 package com.capg.fas.DTO;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 
 import org.springframework.stereotype.Component;
 
@@ -20,9 +19,9 @@ public class ComplaintDetailsDTO {
 	private String complaintMessage; 
 	private String complaintOn; 
 	
-	@ManyToOne
-	@JoinColumn(name="farmer_id")
-	private FarmerDetails farmer;  //null
+	
+	
+	private FarmerDetails farmer;  
 	
 	public int getComplaintId() {
 		return complaintId;

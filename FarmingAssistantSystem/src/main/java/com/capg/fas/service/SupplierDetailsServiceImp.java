@@ -28,10 +28,14 @@ public class SupplierDetailsServiceImp implements ISupplierDetailsService {
 	 * 
 	 */
 	@Override
-	public SupplierDetailsDTO addSupplier(SupplierDetailsDTO supplier) {
-		SupplierDetails simpleSupplier=SupplierDetailsUtils.convertToSupplierDetails(supplier);
-		SupplierDetails supplier1= repo.save(simpleSupplier);
-		SupplierDetailsDTO supplierDto=SupplierDetailsUtils.convertToSupplierDetailsDto(supplier1);
+	public SupplierDetailsDTO addSupplier(SupplierDetailsDTO supplier) {  
+		
+		SupplierDetails simpleSupplier  =   SupplierDetailsUtils.convertToSupplierDetails(supplier);
+		
+		SupplierDetails supplier1 = repo.save(simpleSupplier);
+		
+		SupplierDetailsDTO supplierDto  =  SupplierDetailsUtils.convertToSupplierDetailsDto(supplier1);
+		
 		return supplierDto;
 	}
 	
@@ -40,6 +44,7 @@ public class SupplierDetailsServiceImp implements ISupplierDetailsService {
 		boolean flag=false;
 		
 		String supplierNumber=String.valueOf(suppliers.getSupplierNumber());
+		
 		if(Pattern.matches("^[A-Za-z ]\\w{5,29}$",suppliers.getSupplierName())&&
 				Pattern.matches("[789]{1}[0-9]{9}", supplierNumber)&&
 				Pattern.matches("^(.+)@(.+)$", suppliers.getSupplierEmail()))

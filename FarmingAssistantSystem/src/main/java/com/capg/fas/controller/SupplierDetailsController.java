@@ -25,7 +25,7 @@ import com.capg.fas.service.SupplierDetailsServiceImp;
  * Description : This is controller class for supplier
  * Exception : InvalidSupplierDetailsException
  */
-@RestController
+@RestController   
 @RequestMapping("/api/supplier")
 public class SupplierDetailsController {
 	
@@ -39,7 +39,9 @@ public class SupplierDetailsController {
 	public SupplierDetailsDTO addSupplierDetails(@RequestBody SupplierDetailsDTO supplier) throws InvalidSupplierDetailsException
 	{
 		SupplierDetailsDTO supplierDetails=null;
-		boolean isValid=SupplierDetailsServiceImp.validSupplier(supplier);
+		
+		boolean isValid  = SupplierDetailsServiceImp.validSupplier(supplier);
+		
 		if(isValid)
 		{
 		supplierDetails = service.addSupplier(supplier);
@@ -62,4 +64,14 @@ public class SupplierDetailsController {
 	{
 		return ser.getAllComplaint();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

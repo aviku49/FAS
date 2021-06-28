@@ -1,7 +1,6 @@
 package com.capg.fas.DTO;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 
 import org.springframework.stereotype.Component;
 
@@ -25,8 +24,7 @@ public class OfferDetailsDTO {
 	private String productQuantity; 
 	private String farmingTips;
 	
-	@ManyToOne
-	@JoinColumn(name="retailer_id")
+	
 	   private RetailerDetails retailer;
 
 	public int getProductId() {

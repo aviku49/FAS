@@ -31,8 +31,11 @@ public class ExceptionController {
 			  System.err.println("invalid");
 			  return new ResponseEntity<String>("Invalid retailerDetails Inputs from GlobalExp Handler" ,HttpStatus.NOT_ACCEPTABLE); }
 
-          @ExceptionHandler({ InvalidSupplierDetailsException.class }) public ResponseEntity<String> supplierHandler() { // controller level exp-handling
+          
+          @ExceptionHandler({ InvalidSupplierDetailsException.class })
+          public ResponseEntity<String> supplierHandler() { // controller level exp-handling
 			  System.err.println("invalid");
+			  
 			  return new ResponseEntity<String>("Invalid supplierrDetails Inputs from GlobalExp Handler" ,HttpStatus.NOT_ACCEPTABLE); }
 
 
